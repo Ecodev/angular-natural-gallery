@@ -21,6 +21,16 @@ gulp.task('clean:dist', function () {
 
   // Delete contents but not dist folder to avoid broken npm links
   // when dist directory is removed while npm link references it.
+
+  // Todo : check following
+  // https://github.com/jvandemo/generator-angular2-library/issues/9
+  // This causes bug where consuming app crash because files disapear, and watch is broken.
+  // return deleteFolders([distFolder + '/**', '!' + distFolder]);
+});
+
+// Todo : remove when this will be fixed
+// Clean dist manually when needed
+gulp.task('sam:clean:dist', function () {
   return deleteFolders([distFolder + '/**', '!' + distFolder]);
 });
 
