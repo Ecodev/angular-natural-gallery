@@ -1,0 +1,28 @@
+{
+  "name": "angular-natural-gallery",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sambaptista/angular-natural-gallery"
+  },
+  "author": {
+    "name": "Samuel Baptista",
+    "email": "samuel.baptista@ecodev.ch"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sambaptista/angular-natural-gallery/issues"
+  },
+  "main": "angular-natural-gallery.umd.js",
+  "module": "angular-natural-gallery.js",
+  "jsnext:main": "angular-natural-gallery.js",
+  "typings": "angular-natural-gallery.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
