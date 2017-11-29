@@ -2,23 +2,27 @@
  * This is only for local test
  */
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { SampleModule }  from 'angular-natural-gallery';
+import { NaturalGalleryModule } from 'angular-natural-gallery';
 
 @Component({
-  selector: 'app',
-  template: `<sample-component></sample-component>`
+    selector: 'app-root',
+    template: `Test : <natural-gallery></natural-gallery>`,
 })
-class AppComponent {}
+class AppComponent {
+}
 
 @NgModule({
-  bootstrap: [ AppComponent ],
-  declarations: [ AppComponent ],
-  imports: [ BrowserModule, SampleModule ]
+    bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        NaturalGalleryModule,
+    ],
 })
-class AppModule {}
+class AppModule {
+}
 
 platformBrowserDynamic().bootstrapModule(AppModule);

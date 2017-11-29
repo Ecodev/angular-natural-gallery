@@ -1,37 +1,28 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
+import { NaturalGalleryComponent } from './gallery/gallery.component';
+import { OrganizerService } from './services/organizer.service';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+export * from './gallery/gallery.component';
 
-console.log('asdf');
+export * from './services/organizer.service';
 
 @NgModule({
     imports: [
         CommonModule,
     ],
     declarations: [
-        SampleComponent,
-        SampleDirective,
-        SamplePipe,
+        NaturalGalleryComponent,
     ],
     exports: [
-        SampleComponent,
-        SampleDirective,
-        SamplePipe,
+        NaturalGalleryComponent,
     ],
 })
-export class SampleModule {
+export class NaturalGalleryModule {
     static forRoot(): ModuleWithProviders {
         return {
-            ngModule: SampleModule,
-            providers: [SampleService],
+            ngModule: NaturalGalleryModule,
+            providers: [OrganizerService],
         };
     }
 }
