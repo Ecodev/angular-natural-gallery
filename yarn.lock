@@ -3183,10 +3183,6 @@ natives@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/natives/-/natives-1.1.0.tgz#e9ff841418a6b2ec7a495e939984f78f163e6e31"
 
-"natural-gallery-js@https://github.com/Ecodev/natural-gallery-js#develop":
-  version "2.5.0"
-  resolved "https://github.com/Ecodev/natural-gallery-js#56333ccf50cc722ce234dcf6ce901216d90e45c7"
-
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
@@ -3586,6 +3582,10 @@ performance-now@^0.2.0:
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
+photoswipe@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/photoswipe/-/photoswipe-4.1.2.tgz#95c20a75cea23b70d6299641cad82e03cae7f797"
 
 pify@^2.0.0:
   version "2.3.0"

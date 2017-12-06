@@ -88,7 +88,8 @@ gulp.task('rollup:fesm', function () {
       // See "external" in https://rollupjs.org/#core-functionality
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+          'natural-gallery-js'
       ],
 
       // Format of generated bundle
@@ -121,7 +122,8 @@ gulp.task('rollup:umd', function () {
       // See "external" in https://rollupjs.org/#core-functionality
       external: [
         '@angular/core',
-        '@angular/common'
+        '@angular/common',
+          'natural-gallery-js'
       ],
 
       // Format of generated bundle
@@ -139,7 +141,10 @@ gulp.task('rollup:umd', function () {
 
       // See "globals" in https://rollupjs.org/#core-functionality
       globals: {
-        typescript: 'ts'
+        typescript: 'ts',
+          'natural-gallery-js': 'natural-gallery-js',
+          '@angular/core' : '@angular/core',
+          '@angular/common' : '@angular/common',
       }
 
     }))
