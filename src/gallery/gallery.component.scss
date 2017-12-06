@@ -1,3 +1,8 @@
 @import '../../node_modules/photoswipe/dist/photoswipe';
 @import '../../node_modules/photoswipe/dist/default-skin/default-skin';
 @import '../../node_modules/natural-gallery-js/dist/natural-gallery';
+@import '../../node_modules/natural-gallery-js/dist/themes/natural';
+
+.natural-gallery-next {
+    display: none !important;
+}

@@ -13,18 +13,29 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
 
     @ViewChild('gallery') gallery;
     @ViewChild('pswp') pswp;
+
+    @Input() scrollable;
     @Input() images: any[] = [];
 
     constructor() {
     }
 
     ngOnInit() {
-        const data = {options: {}};
-        const gallery = new Gallery(this.gallery.nativeElement, this.pswp.nativeElement, data);
 
-        if (this.images && this.images.length) {
-            gallery.images = this.images;
-        }
+        setTimeout(() => {
+            const data = {
+                options: {
+                    margin: 5,
+                },
+            };
+
+            document.getElementsByTagName('body')[0].appendChild(this.pswp.nativeElement);
+            const gallery = new Gallery(this.gallery.nativeElement, this.pswp.nativeElement, data, this.scrollable);
+
+            if (this.images && this.images.length) {
+                gallery.images = this.images;
+            }
+        });
     }
 
     ngOnChanges() {
