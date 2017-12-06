@@ -73,7 +73,6 @@
     "node": ">=6.0.0"
   },
   "peerDependencies": {
-    "natural-gallery-js": "https://github.com/Ecodev/natural-gallery-js#develop",
-    "photoswipe": "^4.1.2"
+    "natural-gallery-js": "https://github.com/Ecodev/natural-gallery-js#develop"
   }
 }
