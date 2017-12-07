@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Gallery } from 'natural-gallery-js';
 
 @Component({
@@ -11,11 +11,14 @@ import { Gallery } from 'natural-gallery-js';
 })
 export class NaturalGalleryComponent implements OnInit, OnChanges {
 
-    @ViewChild('gallery') gallery;
-    @ViewChild('pswp') pswp;
-
+    @Input() options;
     @Input() scrollable;
     @Input() images: any[] = [];
+
+    @Output() navigate = new EventEmitter();
+
+    @ViewChild('gallery') gallery;
+    @ViewChild('pswp') pswp;
 
     constructor() {
     }
@@ -24,8 +27,14 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
 
         setTimeout(() => {
             const data = {
-                options: {
-                    margin: 5,
+                options: this.options,
+                events: {
+                    link: {
+                        preventDefault: true,
+                        callback: (item) => {
+                            this.navigate.emit(item);
+                        },
+                    },
                 },
             };
 
