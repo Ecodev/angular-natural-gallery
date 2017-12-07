@@ -15,7 +15,7 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
     @Input() scrollable;
     @Input() images: any[] = [];
 
-    @Output() navigate = new EventEmitter();
+    @Output() activate = new EventEmitter();
 
     @ViewChild('gallery') gallery;
     @ViewChild('pswp') pswp;
@@ -32,7 +32,7 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
                     link: {
                         preventDefault: true,
                         callback: (item) => {
-                            this.navigate.emit(item);
+                            this.activate.emit(item);
                         },
                     },
                 },
