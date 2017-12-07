@@ -179,6 +179,14 @@ gulp.task('copy:readme', function () {
 });
 
 /**
+ * 9b. Copy README.md from / to /dist
+ */
+gulp.task('copy:themes', function () {
+    return gulp.src([`${srcFolder}/**/*.theme.scss`])
+               .pipe(gulp.dest(distFolder + '/theming'));
+});
+
+/**
  * 10. Delete /.tmp folder
  */
 gulp.task('clean:tmp', function () {
@@ -203,6 +211,7 @@ gulp.task('compile', function () {
     'copy:build',
     'copy:manifest',
     'copy:readme',
+    'copy:themes',
     'clean:build',
     'clean:tmp',
     function (err) {
