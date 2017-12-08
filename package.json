@@ -1,6 +1,6 @@
 {
   "name": "angular-natural-gallery",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sambaptista/angular-natural-gallery"
+    "url": "https://github.com/Ecodev/angular-natural-gallery"
   },
   "author": {
     "name": "Samuel Baptista",
@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sambaptista/angular-natural-gallery/issues"
+    "url": "https://github.com/Ecodev/angular-natural-gallery/issues"
   },
   "devDependencies": {
     "@angular/common": "^5.0.0",
@@ -72,7 +72,8 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "peerDependencies": {
-    "natural-gallery-js": "https://github.com/Ecodev/natural-gallery-js#develop"
+  "peerDependencies": {},
+  "dependencies": {
+    "natural-gallery-js": "https://github.com/Ecodev/natural-gallery-js#master"
   }
 }
