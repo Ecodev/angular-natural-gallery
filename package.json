@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sambaptista/angular-natural-gallery"
+    "url": "https://github.com/Ecodev/angular-natural-gallery"
   },
   "author": {
     "name": "Samuel Baptista",
@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sambaptista/angular-natural-gallery/issues"
+    "url": "https://github.com/Ecodev/angular-natural-gallery/issues"
   },
   "devDependencies": {
     "@angular/common": "^5.0.0",

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sambaptista/angular-natural-gallery"
+    "url": "https://github.com/Ecodev/angular-natural-gallery"
   },
   "author": {
     "name": "Samuel Baptista",
@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sambaptista/angular-natural-gallery/issues"
+    "url": "https://github.com/Ecodev/angular-natural-gallery/issues"
   },
   "main": "angular-natural-gallery.umd.js",
   "module": "angular-natural-gallery.js",
