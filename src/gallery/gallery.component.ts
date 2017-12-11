@@ -16,9 +16,12 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
     @Input() images: any[] = [];
 
     @Output() activate = new EventEmitter();
+    @Output() selectChange = new EventEmitter();
 
-    @ViewChild('gallery') gallery;
-    @ViewChild('pswp') pswp;
+    @ViewChild('gallery') galleryElement;
+    @ViewChild('pswp') pswpElement;
+
+    private gallery;
 
     constructor() {
     }
@@ -35,16 +38,23 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
                             this.activate.emit(item);
                         },
                     },
+                    select: (items) => {
+                        this.selectChange.emit(items);
+                    },
                 },
             };
 
-            document.getElementsByTagName('body')[0].appendChild(this.pswp.nativeElement);
-            const gallery = new Gallery(this.gallery.nativeElement, this.pswp.nativeElement, data, this.scrollable);
+            document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
+            this.gallery = new Gallery(this.galleryElement.nativeElement, this.pswpElement.nativeElement, data, this.scrollable);
 
             if (this.images && this.images.length) {
-                gallery.images = this.images;
+                this.gallery.images = this.images;
             }
         });
+    }
+
+    public unselectAll() {
+        this.gallery.unselectAll();
     }
 
     ngOnChanges() {

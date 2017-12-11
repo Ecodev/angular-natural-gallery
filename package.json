@@ -1,6 +1,6 @@
 {
   "name": "angular-natural-gallery",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -74,6 +74,6 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "natural-gallery-js": "https://github.com/Ecodev/natural-gallery-js#master"
+    "natural-gallery-js": "^2.6.0"
   }
 }

@@ -38,6 +38,24 @@
             background: mat-color($primary) !important;
             border-top: 1px solid lighten(mat-color($primary), 0.9);
         }
+
+        .natural-gallery .figure.selected {
+            background:mat-color($foreground, base, 0.2);
+        }
+
+        .natural-gallery .figure.selected .selectBtn {
+            color: mat-color($accent) !important;
+        }
+
+        .natural-gallery .button {
+            background: mat-color($primary) !important;
+            border-top: 1px solid lighten(mat-color($primary), 0.9);
+        }
+
+        .natural-gallery .button:hover {
+            background: darken(mat-color($primary), 10%) !important;
+        }
+
     }
 }
 

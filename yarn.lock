@@ -3183,9 +3183,9 @@ natives@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/natives/-/natives-1.1.0.tgz#e9ff841418a6b2ec7a495e939984f78f163e6e31"
 
-"natural-gallery-js@https://github.com/Ecodev/natural-gallery-js#master":
-  version "2.5.0"
-  resolved "https://github.com/Ecodev/natural-gallery-js#9ac3b19f1dcdd199504109cb3fcbc2147cdb7b13"
+natural-gallery-js@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/natural-gallery-js/-/natural-gallery-js-2.6.0.tgz#c5d5d17ddbdb32c6f8a3fdfcb6fd9e4b8d2277fe"
   dependencies:
     photoswipe "^4.1.2"
 
