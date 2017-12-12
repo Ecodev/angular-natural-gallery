@@ -7,6 +7,11 @@
     $foreground: map-get($theme, foreground);
 
     natural-gallery {
+
+        svg {
+            fill: currentColor !important;
+        }
+
         .natural-gallery .natural-gallery-body .figure.loading::before,
         .natural-gallery .bar::before,
         .natural-gallery .bar::after {
@@ -19,18 +24,16 @@
 
         /* Disabled */
         .natural-gallery .natural-gallery-noresults svg {
-            color: #999999 !important;
-            fill: #999999 !important;
+            color: mat-color($foreground, base, 0.5) !important;
         }
 
         /* Highlighted */
         .natural-gallery .natural-gallery-next svg {
             color: mat-color($primary) !important;
-            fill: currentColor !important;
         }
 
         .natural-gallery .natural-gallery-next:hover {
-            background-color: #eeeeee !important;
+            background-color: mat-color($foreground, base, 0.1) !important;
         }
 
         .natural-gallery .button,
