@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Gallery } from 'natural-gallery-js';
 
 @Component({
@@ -9,7 +9,7 @@ import { Gallery } from 'natural-gallery-js';
         './gallery.component.scss',
     ],
 })
-export class NaturalGalleryComponent implements OnInit, OnChanges {
+export class NaturalGalleryComponent implements OnInit {
 
     @Input() options;
     @Input() scrollable;
@@ -25,7 +25,7 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
 
     @Input() set images(images) {
         this.collection = images;
-        if (this.gallery && images && images.constructor === Array || images === null) {
+        if (this.gallery && (images && images.constructor === Array || images === null)) {
             this.gallery.collection = images;
         }
     }
@@ -61,10 +61,6 @@ export class NaturalGalleryComponent implements OnInit, OnChanges {
 
     public unselectAll() {
         this.gallery.unselectAll();
-    }
-
-    ngOnChanges() {
-        // console.log('change', this.images ? this.images.length : null);
     }
 
 }
