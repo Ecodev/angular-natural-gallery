@@ -1,6 +1,6 @@
 {
     "name": "angular-natural-gallery",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/Ecodev/angular-natural-gallery"
@@ -21,12 +21,12 @@
     "jsnext:main": "angular-natural-gallery.js",
     "typings": "angular-natural-gallery.d.ts",
     "peerDependencies": {
-        "@angular/core": "^4.0.0",
+        "@angular/core": ">= 4.0.0",
         "rxjs": "^5.1.0",
         "zone.js": "^0.8.4"
     },
     "dependencies": {
-        "natural-gallery-js": "^2.6.1"
+        "natural-gallery-js": "^2.7.0"
     }
 
 }
