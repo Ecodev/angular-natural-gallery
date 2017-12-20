@@ -16,11 +16,12 @@ export class NaturalGalleryComponent implements OnInit {
 
     @Output() activate = new EventEmitter();
     @Output() selectChange = new EventEmitter();
+    @Output() pagination = new EventEmitter();
 
     @ViewChild('gallery') galleryElement;
     @ViewChild('pswp') pswpElement;
 
-    private gallery;
+    private gallery: Gallery;
     private collection;
 
     @Input() set images(images) {
@@ -48,11 +49,18 @@ export class NaturalGalleryComponent implements OnInit {
                     select: (items) => {
                         this.selectChange.emit(items);
                     },
+                    pagination: (offset, limit) => {
+                        this.pagination.emit({
+                            offset: offset,
+                            limit: limit,
+                        });
+                    },
                 },
             };
 
             document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
             this.gallery = new Gallery(this.galleryElement.nativeElement, this.pswpElement.nativeElement, data, this.scrollable);
+
             if (this.collection && this.collection.length) {
                 this.gallery.collection = this.collection;
             }
@@ -61,6 +69,10 @@ export class NaturalGalleryComponent implements OnInit {
 
     public unselectAll() {
         this.gallery.unselectAll();
+    }
+
+    public addItems(items) {
+        this.gallery.addItems(items);
     }
 
 }
