@@ -1,6 +1,6 @@
 {
     "name": "angular-natural-gallery",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/Ecodev/angular-natural-gallery"
@@ -26,7 +26,7 @@
         "zone.js": "^0.8.4"
     },
     "dependencies": {
-        "natural-gallery-js": "^2.7.0"
+        "natural-gallery-js": "^2.7.1"
     }
 
 }

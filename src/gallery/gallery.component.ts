@@ -22,12 +22,12 @@ export class NaturalGalleryComponent implements OnInit {
     @ViewChild('pswp') pswpElement;
 
     private gallery: Gallery;
-    private collection;
+    private items;
 
-    @Input() set images(images) {
-        this.collection = images;
-        if (this.gallery && (images && images.constructor === Array || images === null)) {
-            this.gallery.collection = images;
+    @Input() set collection(items) {
+        this.items = items;
+        if (this.gallery) {
+            this.gallery.collection = this.getCollection();
         }
     }
 
@@ -60,11 +60,12 @@ export class NaturalGalleryComponent implements OnInit {
 
             document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
             this.gallery = new Gallery(this.galleryElement.nativeElement, this.pswpElement.nativeElement, data, this.scrollable);
-
-            if (this.collection && this.collection.length) {
-                this.gallery.collection = this.collection;
-            }
+            this.gallery.collection = this.getCollection();
         });
+    }
+
+    private getCollection() {
+        return this.items && this.items.constructor === Array ? this.items : [];
     }
 
     public unselectAll() {
