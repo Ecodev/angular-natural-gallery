@@ -12,14 +12,17 @@
             fill: currentColor !important;
         }
 
-        .natural-gallery .natural-gallery-body .figure.loading::before,
+        .natural-gallery .natural-gallery-body .figure.loading {
+            background-color: mat-color($primary, 0.1);
+        }
+
         .natural-gallery .bar::before,
         .natural-gallery .bar::after {
             background-color: mat-color($primary) !important;
         }
 
-        .natural-gallery .natural-gallery-body .figure.loading.errored::before {
-            background-color: mat-color($warn) !important;
+        .natural-gallery .natural-gallery-body .figure.errored {
+            background-color: mat-color($warn, 0.1);
         }
 
         /* Disabled */
