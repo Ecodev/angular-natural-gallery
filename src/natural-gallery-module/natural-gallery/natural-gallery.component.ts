@@ -1,13 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Gallery } from 'natural-gallery-js';
+import { Gallery } from '@ecodev/natural-gallery-js';
 
 @Component({
     selector: 'natural-gallery',
-    templateUrl: 'gallery.component.html',
+    templateUrl: 'natural-gallery.component.html',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: [
-        './gallery.component.scss',
-    ],
+    styleUrls: ['./natural-gallery.component.scss'],
 })
 export class NaturalGalleryComponent implements OnInit {
 

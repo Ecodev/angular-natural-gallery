@@ -31,5 +31,5 @@ Desktop.ini
 # Build files
 dist/*
 
-# Playground tmp files
-.playground
+.ng_pkg_build
+dist.tgz

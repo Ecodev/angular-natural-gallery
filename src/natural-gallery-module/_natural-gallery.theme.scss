@@ -8,7 +8,7 @@
     @return rgba($color, $opacity);
 }
 
-@import 'gallery/gallery.theme';
+@import 'natural-gallery/natural-gallery.theme';
 @mixin natural-gallery-theme($theme) {
     @include gallery-theme($theme);
 }
