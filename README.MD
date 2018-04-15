@@ -1,5 +1,7 @@
 # @ecodev/angular-natural-gallery
 
+Wrapper for @ecodev/natural-gallery-js
+
 ## Installation
 
 To install this library, run with yarn:
