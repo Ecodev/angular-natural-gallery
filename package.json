@@ -1,10 +1,11 @@
 {
     "name": "@ecodev/angular-natural-gallery",
+    "version": "1.0.1",
     "scripts": {
         "ng": "ng",
-        "sandbox": "ng serve --port 4574 --open",
+        "dev": "ng serve --port 1406 --open",
         "prod": "ng-packagr -p ng-package.json; gulp copy:themes",
-        "dev": "yarn prod; gulp watch",
+        "prod:watch": "yarn prod; gulp watch",
         "release": "yarn prod; yarn publish dist --access public",
         "test": "ng test",
         "lint": "ng lint",
@@ -79,6 +80,5 @@
     "peerDependencies": {},
     "dependencies": {
         "@ecodev/natural-gallery-js": "^3.0.3"
-    },
-    "version": "1.0.1"
+    }
 }

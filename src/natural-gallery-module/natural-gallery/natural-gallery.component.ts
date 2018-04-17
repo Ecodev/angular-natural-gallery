@@ -19,7 +19,7 @@ export class NaturalGalleryComponent implements OnInit {
     @ViewChild('gallery') galleryElement;
     @ViewChild('pswp') pswpElement;
 
-    private gallery: Gallery;
+    public gallery: Gallery;
     private items;
 
     @Input() set collection(items) {
@@ -64,14 +64,6 @@ export class NaturalGalleryComponent implements OnInit {
 
     private getCollection() {
         return this.items && this.items.constructor === Array ? this.items : [];
-    }
-
-    public unselectAll() {
-        this.gallery.unselectAll();
-    }
-
-    public addItems(items) {
-        this.gallery.addItems(items);
     }
 
 }

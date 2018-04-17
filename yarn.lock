@@ -159,8 +159,8 @@
     tslib "^1.7.1"
 
 "@ecodev/natural-gallery-js@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-3.0.3.tgz#703c9e6fa4c9c42362251c644c1c3eea4bf38f21"
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-3.1.0.tgz#cbad9b56e51e8f17a83af6ec53b561ec926246a3"
   dependencies:
     photoswipe "^4.1.2"
 
