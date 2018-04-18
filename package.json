@@ -6,7 +6,7 @@
         "dev": "ng serve --port 1406 --open",
         "prod": "ng-packagr -p ng-package.json; gulp copy:themes",
         "prod:watch": "yarn prod; gulp watch",
-        "release": "yarn prod; yarn publish dist --access public",
+        "release": "yarn prod; cd dist; yarn publish --access public",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
