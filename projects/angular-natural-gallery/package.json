@@ -1,0 +1,12 @@
+{
+    "name": "@ecodev/angular-natural-gallery",
+    "version": "4.0.0",
+    "license": "MIT",
+    "repository": "github:Ecodev/angular-natural-gallery",
+    "peerDependencies": {
+        "@angular/common": "^6.0.0",
+        "@angular/core": "^6.0.0",
+        "@angular/material": "^6.0.0",
+        "@angular/cdk": "^6.0.0"
+    }
+}
