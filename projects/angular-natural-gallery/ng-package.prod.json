@@ -2,6 +2,12 @@
     "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
     "dest": "../../dist/angular-natural-gallery",
     "lib": {
-        "entryFile": "src/public_api.ts"
-    }
+        "entryFile": "src/public_api.ts",
+        "umdModuleIds": {
+            "@ecodev/natural-gallery-js": "@ecodev/natural-gallery-js"
+        }
+    },
+    "whitelistedNonPeerDependencies": [
+        "@ecodev/natural-gallery-js"
+    ]
 }
