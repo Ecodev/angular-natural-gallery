@@ -17,8 +17,8 @@ export class NaturalGalleryComponent implements OnInit {
     @Output() pagination = new EventEmitter();
     @Output() zoom = new EventEmitter();
 
-    @ViewChild('gallery') galleryElement;
-    @ViewChild('pswp') pswpElement;
+    @ViewChild('gallery', {static: true}) galleryElement;
+    @ViewChild('pswp', {static: true}) pswpElement;
 
     public gallery: Natural;
 

@@ -5,10 +5,12 @@
     "lib": {
         "entryFile": "src/public_api.ts",
         "umdModuleIds": {
-            "@ecodev/natural-gallery-js": "@ecodev/natural-gallery-js"
+            "@ecodev/natural-gallery-js": "@ecodev/natural-gallery-js",
+            "photoswipe": "photoswipe"
         }
     },
     "whitelistedNonPeerDependencies": [
-        "@ecodev/natural-gallery-js"
+        "@ecodev/natural-gallery-js",
+        "photoswipe"
     ]
 }
