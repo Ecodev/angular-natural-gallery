@@ -8,57 +8,34 @@
 
     natural-gallery {
 
-        svg {
-            fill: currentColor !important;
-        }
-
-        .natural-gallery .natural-gallery-body .figure.loading {
+        .natural-gallery-js .natural-gallery-body .figure {
             background-color: mat-color($primary, 0.1);
         }
 
-        .natural-gallery .bar::before,
-        .natural-gallery .bar::after {
-            background-color: mat-color($primary) !important;
-        }
-
-        .natural-gallery .natural-gallery-body .figure.errored {
+        .natural-gallery-js .natural-gallery-body .figure.errored {
             background-color: mat-color($warn, 0.1);
         }
 
-        /* Disabled */
-        .natural-gallery .natural-gallery-noresults svg {
-            color: mat-color($foreground, base, 0.5) !important;
-        }
-
         /* Highlighted */
-        .natural-gallery .natural-gallery-next svg {
+        .natural-gallery-js .natural-gallery-next svg {
             color: mat-color($primary) !important;
+            fill: currentColor !important;
         }
 
-        .natural-gallery .natural-gallery-next:hover {
+        .natural-gallery-js .natural-gallery-next:hover {
             background-color: mat-color($foreground, base, 0.1) !important;
         }
 
-        .natural-gallery .button,
-        .natural-gallery .figure[href] .title {
-            background: mat-color($primary) !important;
-            border-top: 1px solid lighten(mat-color($primary), 0.9);
-        }
-
-        .natural-gallery .figure.selected {
-            background:mat-color($foreground, base, 0.2);
-        }
-
-        .natural-gallery .figure.selected .selectBtn {
+        .natural-gallery-js .figure.selected .selectBtn {
             color: mat-color($accent) !important;
         }
 
-        .natural-gallery .button {
+        .natural-gallery-js .button {
             background: mat-color($primary) !important;
             border-top: 1px solid lighten(mat-color($primary), 0.9);
         }
 
-        .natural-gallery .button:hover {
+        .natural-gallery-js .button:hover {
             background: darken(mat-color($primary), 10%) !important;
         }
 

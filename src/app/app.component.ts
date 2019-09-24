@@ -7,7 +7,7 @@ import { NaturalGalleryComponent } from '@ecodev/angular-natural-gallery';
 })
 export class AppComponent {
 
-    @ViewChild('gallery') gallery: NaturalGalleryComponent;
+    @ViewChild('gallery', {static: true}) gallery: NaturalGalleryComponent;
 
     public items;
     public items1;

@@ -9,6 +9,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "strictNullChecks": true,
+        "importHelpers": true,
         "target": "es5",
         "typeRoots": [
             "node_modules/@types"
@@ -23,6 +24,9 @@
             ],
             "@ecodev/angular-natural-gallery/*": [
                 "dist/angular-natural-gallery/*"
+            ],
+            "PhotoSwipeUI_Default": [
+                "node_modules/photoswipe/dist/photoswipe-ui-default"
             ]
         }
     }
