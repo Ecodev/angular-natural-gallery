@@ -24,9 +24,6 @@
             ],
             "@ecodev/angular-natural-gallery/*": [
                 "dist/angular-natural-gallery/*"
-            ],
-            "PhotoSwipeUI_Default": [
-                "node_modules/photoswipe/dist/photoswipe-ui-default"
             ]
         }
     }

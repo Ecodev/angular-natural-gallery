@@ -294,9 +294,9 @@
     to-fast-properties "^2.0.0"
 
 "@ecodev/natural-gallery-js@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-5.0.1.tgz#93bef7c16855cf5ff1c2fa30e40b0b61fec25589"
-  integrity sha512-LoctHaQ4YMWR4boxjxl284IRCLAU6jlNY2kGIaeIdlVKtPH/L+CYnqUBNFwU+eDCMIkhKIXcxYYZ3vy/9Jwi/A==
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-5.0.2.tgz#3d9abfb431d16ab5d41f5713700eb7026af92774"
+  integrity sha512-5Bl37A2ktk1YQF9zjrcAuDl/AUjQPMw/dCbG2ZaQGOe8gA3ScRxBWJPZpStc1NZTiTQ85aIhAwNFaYCCNFGzhg==
 
 "@ngtools/webpack@8.2.2":
   version "8.2.2"
