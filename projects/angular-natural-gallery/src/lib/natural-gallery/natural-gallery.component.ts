@@ -40,6 +40,7 @@ export class NaturalGalleryComponent implements OnInit {
             // Moves the PhotoSwipe template to body to prevent layout to be behind or hidden (because overflow) on a parent scrollable div
             document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
             this.gallery = new Natural(this.galleryElement.nativeElement, this.options, this.pswpElement.nativeElement, this.scrollable);
+            this.gallery.init();
 
             this.gallery.addEventListener('zoom', (ev) => {
                 this.zoom.emit(ev.detail);

@@ -3,7 +3,6 @@ import { FormsModule } from '@angular/forms';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NaturalSearchModule } from '@ecodev/angular-natural-gallery';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {

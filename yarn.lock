@@ -293,10 +293,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@ecodev/natural-gallery-js@^5.0.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-5.1.0.tgz#a8b91e9bd0dd258a657bf7ad76bbf41f14472539"
-  integrity sha512-uzqU9dTZlIrQjy1AjazffrI+heJkKUnqcTLJJf77HiYOYjd+EJ21kaGnyXLnXCINm5/RpffXOHro5lr789TjWQ==
+"@ecodev/natural-gallery-js@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-6.0.1.tgz#f1a17bc9893dda49526ce3237a809e46ee8e6484"
+  integrity sha512-QNP9nCjYT+By5+RJFc1TyC9axA5s6Ga0Ru6iDUsY5f9vn+b37gT2QWd3d/S9oxK0/f0Ao/qqAI8RXjMLvZrWSQ==
 
 "@ngtools/webpack@8.2.2":
   version "8.2.2"
