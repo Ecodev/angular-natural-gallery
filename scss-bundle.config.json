@@ -1,0 +1,9 @@
+{
+    "bundlerOptions": {
+        "entryFile": "./projects/angular-natural-gallery/src/lib/_natural-gallery.theme.scss",
+        "outFile": "./dist/angular-natural-gallery/theming/_natural-gallery.theme.scss",
+        "ignoreImports": [
+            "~@angular/.*"
+        ]
+    }
+}
