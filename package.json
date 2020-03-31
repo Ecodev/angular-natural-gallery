@@ -8,7 +8,7 @@
         "e2e": "ng e2e",
         "build-lib": "ng build angular-natural-gallery && cp -v README.md dist/angular-natural-gallery/ && scss-bundle --config scss-bundle.config.json && cd dist/angular-natural-gallery && yarn version --no-git-tag-version --new-version `git describe --tags --always`",
         "build-docs": "yarn build-lib && ng build demo --prod --aot --base-href /angular-natural-gallery/ && cp dist/demo/index.html dist/demo/404.html",
-        "release": "yarn build-lib && cd dist/angular-natural-gallery/ && yarn publish --access public",
+        "release": "rm -rf dist/ && yarn build-lib && cd dist/angular-natural-gallery/ && yarn publish --access public",
         "llink": "cd dist/angular-natural-gallery && (yarn unlink ; yarn link)"
     },
     "repository": {
