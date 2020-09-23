@@ -1,16 +1,20 @@
+// tslint:disable:max-line-length
 import {Component, ViewChild} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
+import {ModelAttributes} from '@ecodev/natural-gallery-js/js/galleries/AbstractGallery';
+
+type Model = ModelAttributes & {thumbnailWidth: number; thumbnailHeight: number};
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
 })
 export class AppComponent {
-    @ViewChild('gallery', {static: true}) gallery: NaturalGalleryComponent;
+    @ViewChild('gallery', {static: true}) private gallery: NaturalGalleryComponent;
 
-    public items;
-    public items1;
-    public items2;
+    public items: Model[];
+    public items1: Model[];
+    public items2: Model[];
 
     public options = {
         rowHeight: 400,
@@ -26,11 +30,11 @@ export class AppComponent {
         this.items = this.items1;
     }
 
-    public addItems(items) {
+    public addItems(items): void {
         this.gallery.gallery.addItems(items);
     }
 
-    private mapImages(i) {
+    private mapImages(i): Model {
         return {
             thumbnailSrc: i.urls.small,
             thumbnailWidth: (400 * i.width) / i.height,
@@ -42,11 +46,11 @@ export class AppComponent {
         };
     }
 
-    public log(val1, val2) {
+    public log(val1, val2): void {
         console.log(val1, val2);
     }
 
-    public getImages() {
+    public getImages(): any[] {
         return [
             {
                 id: 'cok-OxpkrKQ',

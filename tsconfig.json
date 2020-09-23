@@ -18,5 +18,10 @@
             "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
             "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"]
         }
+    },
+    "angularCompilerOptions": {
+        "fullTemplateTypeCheck": true,
+        "strictInjectionParameters": true,
+        "strictTemplates": true,
     }
 }
