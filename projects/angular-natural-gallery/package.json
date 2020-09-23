@@ -4,7 +4,7 @@
     "license": "MIT",
     "repository": "github:Ecodev/angular-natural-gallery",
     "dependencies": {
-        "@ecodev/natural-gallery-js": "^6.0.1",
+        "@ecodev/natural-gallery-js": "^7.0.0",
         "photoswipe": "^4.1.3",
         "tslib": "^2.0.0"
     },
