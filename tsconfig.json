@@ -2,7 +2,7 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./",
-    "module": "esnext",
+        "module": "esnext",
         "outDir": "./dist/out-tsc",
         "sourceMap": true,
         "declaration": false,
@@ -12,20 +12,11 @@
         "strictNullChecks": true,
         "importHelpers": true,
         "target": "es5",
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "lib": [
-            "es2017",
-            "dom"
-        ],
+        "typeRoots": ["node_modules/@types"],
+        "lib": ["es2017", "dom"],
         "paths": {
-            "@ecodev/angular-natural-gallery": [
-                "projects/angular-natural-gallery/src/public_api"
-            ],
-            "@ecodev/angular-natural-gallery/*": [
-                "dist/angular-natural-gallery/*"
-            ]
+            "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
+            "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"]
         }
     }
 }

@@ -1,12 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
+import {DebugElement} from '@angular/core';
 
-import { NaturalGalleryComponent } from './natural-gallery.component';
-import { beforeEach, describe, it } from 'selenium-webdriver/testing';
+import {NaturalGalleryComponent} from './natural-gallery.component';
+import {beforeEach, describe, it} from 'selenium-webdriver/testing';
 
 describe('NaturalGalleryComponent', () => {
-
     let comp: NaturalGalleryComponent;
     let fixture: ComponentFixture<NaturalGalleryComponent>;
     let de: DebugElement;

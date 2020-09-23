@@ -1,5 +1,4 @@
 @mixin gallery-theme($theme) {
-
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     $warn: map-get($theme, warn);
@@ -7,7 +6,6 @@
     $foreground: map-get($theme, foreground);
 
     natural-gallery {
-
         .natural-gallery-js .natural-gallery-body .figure {
             background-color: mat-color($primary, 0.1);
         }
@@ -38,8 +36,5 @@
         .natural-gallery-js .button:hover {
             background: darken(mat-color($primary), 10%) !important;
         }
-
     }
 }
-
-

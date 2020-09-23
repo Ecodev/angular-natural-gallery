@@ -13,28 +13,26 @@ $ yarn add @ecodev/angular-natural-gallery
 ## Consuming your library in your Angular `AppModule`
 
 ```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
 // Import the library
-import { NaturalGalleryModule } from '@ecodev/angular-natural-gallery';
+import {NaturalGalleryModule} from '@ecodev/angular-natural-gallery';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
 
     // Specify the library as an import
-    NaturalGalleryModule
+    NaturalGalleryModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:

@@ -7,7 +7,5 @@
             "@ecodev/natural-gallery-js": "@ecodev/natural-gallery-js"
         }
     },
-    "whitelistedNonPeerDependencies": [
-        "@ecodev/natural-gallery-js"
-    ]
+    "whitelistedNonPeerDependencies": ["@ecodev/natural-gallery-js"]
 }

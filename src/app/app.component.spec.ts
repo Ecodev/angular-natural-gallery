@@ -1,22 +1,15 @@
-import { async, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import {async, TestBed} from '@angular/core/testing';
+import {FormsModule} from '@angular/forms';
 
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AppComponent} from './app.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [
-                AppComponent,
-            ],
-            imports: [
-                BrowserModule,
-                BrowserAnimationsModule,
-                FormsModule,
-                BrowserAnimationsModule,
-            ],
+            declarations: [AppComponent],
+            imports: [BrowserModule, BrowserAnimationsModule, FormsModule, BrowserAnimationsModule],
         }).compileComponents();
     }));
 

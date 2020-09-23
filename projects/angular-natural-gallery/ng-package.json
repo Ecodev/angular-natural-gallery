@@ -9,8 +9,5 @@
             "photoswipe": "photoswipe"
         }
     },
-    "whitelistedNonPeerDependencies": [
-        "@ecodev/natural-gallery-js",
-        "photoswipe"
-    ]
+    "whitelistedNonPeerDependencies": ["@ecodev/natural-gallery-js", "photoswipe"]
 }

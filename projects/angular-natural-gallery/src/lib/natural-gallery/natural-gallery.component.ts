@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
-import { Natural } from '@ecodev/natural-gallery-js';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Natural} from '@ecodev/natural-gallery-js';
 
 @Component({
     selector: 'natural-gallery',
@@ -8,7 +8,6 @@ import { Natural } from '@ecodev/natural-gallery-js';
     styleUrls: ['./natural-gallery.component.scss'],
 })
 export class NaturalGalleryComponent implements OnInit {
-
     @Input() options;
     @Input() scrollable;
 
@@ -31,30 +30,33 @@ export class NaturalGalleryComponent implements OnInit {
         }
     }
 
-    constructor() {
-    }
+    constructor() {}
 
     ngOnInit() {
-
         setTimeout(() => {
             // Moves the PhotoSwipe template to body to prevent layout to be behind or hidden (because overflow) on a parent scrollable div
             document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
-            this.gallery = new Natural(this.galleryElement.nativeElement, this.options, this.pswpElement.nativeElement, this.scrollable);
+            this.gallery = new Natural(
+                this.galleryElement.nativeElement,
+                this.options,
+                this.pswpElement.nativeElement,
+                this.scrollable,
+            );
             this.gallery.init();
 
-            this.gallery.addEventListener('zoom', (ev) => {
+            this.gallery.addEventListener('zoom', ev => {
                 this.zoom.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('select', (ev) => {
+            this.gallery.addEventListener('select', ev => {
                 this.select.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('activate', (ev) => {
+            this.gallery.addEventListener('activate', ev => {
                 this.activate.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('pagination', (ev) => {
+            this.gallery.addEventListener('pagination', ev => {
                 this.pagination.emit(ev.detail);
             });
 
@@ -63,5 +65,4 @@ export class NaturalGalleryComponent implements OnInit {
             }
         });
     }
-
 }
