@@ -1352,10 +1352,12 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@ecodev/natural-gallery-js@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-7.1.0.tgz#6ba3b281c6ec3f4399d211c1db485c44d71c4f69"
-  integrity sha512-3DsiGWfl0AMOYpnel+Iezh6z6zyOWv23iOOWe8aMxgMuy+N1iYXxVcCp0fOJcxeswz5K/2xjAC9qZJEAaUPklA==
+"@ecodev/natural-gallery-js@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-7.1.1.tgz#5f7cad1d3b9dcf261d2dd99672897520f273806d"
+  integrity sha512-IFY6qgHp5ueNR3uffn9RIza0QfyrX30SKXExzPi4zMx/23NbVhNIAUtMmotb6YDx0PSrZDn72V5sZaR89uJxRg==
+  dependencies:
+    lodash-es "^4.17.21"
 
 "@istanbuljs/schema@^0.1.2":
   version "0.1.2"
@@ -5931,6 +5933,11 @@ locate-path@^5.0.0:
   integrity sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
   dependencies:
     p-locate "^4.1.0"
+
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
