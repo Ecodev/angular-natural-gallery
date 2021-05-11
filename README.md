@@ -1,5 +1,7 @@
 # @ecodev/angular-natural-gallery
 
+[![Build Status](https://github.com/Ecodev/angular-natural-gallery/workflows/main/badge.svg)](https://github.com/Ecodev/angular-natural-gallery/actions)
+
 Thin wrapper for [@ecodev/natural-gallery-js](https://github.com/Ecodev/natural-gallery-js).
 
 ## Installation

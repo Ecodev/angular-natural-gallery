@@ -3,6 +3,7 @@ import {Natural} from '@ecodev/natural-gallery-js';
 import {ModelAttributes} from '@ecodev/natural-gallery-js/js/galleries/AbstractGallery';
 import {DOCUMENT} from '@angular/common';
 
+/** @dynamic */
 @Component({
     selector: 'natural-gallery',
     templateUrl: 'natural-gallery.component.html',
@@ -32,8 +33,7 @@ export class NaturalGalleryComponent implements OnInit {
         }
     }
 
-    constructor(@Inject(DOCUMENT) private readonly document: Document) {
-    }
+    constructor(@Inject(DOCUMENT) private readonly document: Document) {}
 
     public ngOnInit(): void {
         setTimeout(() => {
