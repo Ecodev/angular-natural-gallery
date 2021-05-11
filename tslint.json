@@ -100,7 +100,20 @@
         "use-pipe-transform-interface": true,
         "object-literal-shorthand": false,
         "no-string-literal": false,
-        "member-access": true
+        "member-access": true,
+        "no-restricted-globals": [
+            true,
+            "document",
+            "event",
+            "history",
+            "length",
+            "localStorage",
+            "location",
+            "name",
+            "navigator",
+            "sessionStorage",
+            "window"
+        ]
     },
     "rulesDirectory": ["codelyzer"]
 }

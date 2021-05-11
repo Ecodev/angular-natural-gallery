@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Natural} from '@ecodev/natural-gallery-js';
 import {ModelAttributes} from '@ecodev/natural-gallery-js/js/galleries/AbstractGallery';
+import {DOCUMENT} from '@angular/common';
 
 @Component({
     selector: 'natural-gallery',
@@ -31,12 +32,13 @@ export class NaturalGalleryComponent implements OnInit {
         }
     }
 
-    constructor() {}
+    constructor(@Inject(DOCUMENT) private readonly document: Document) {
+    }
 
     public ngOnInit(): void {
         setTimeout(() => {
             // Moves the PhotoSwipe template to body to prevent layout to be behind or hidden (because overflow) on a parent scrollable div
-            document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
+            this.document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
             this.gallery = new Natural(
                 this.galleryElement.nativeElement,
                 this.options,
