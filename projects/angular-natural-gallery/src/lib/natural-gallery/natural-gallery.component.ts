@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
-import {Natural} from '@ecodev/natural-gallery-js';
-import {ModelAttributes} from '@ecodev/natural-gallery-js/js/galleries/AbstractGallery';
+import {ModelAttributes, Natural} from '@ecodev/natural-gallery-js';
 import {DOCUMENT} from '@angular/common';
 
 /** @dynamic */
