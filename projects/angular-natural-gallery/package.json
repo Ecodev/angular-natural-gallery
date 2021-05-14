@@ -7,6 +7,7 @@
     "dependencies": {
         "@ecodev/natural-gallery-js": "^8.0.0",
         "photoswipe": "^4.1.3",
+        "@types/photoswipe": "^4.1.1",
         "tslib": "^2.0.0"
     },
     "peerDependencies": {
