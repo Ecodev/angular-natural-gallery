@@ -1352,10 +1352,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@ecodev/natural-gallery-js@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-8.0.0.tgz#f6c545c785c5062da2c3f3627575daeaef195f8a"
-  integrity sha512-bisFjkuP52q6cObRO8/99fyMlBpotOCZlcR+VoZ2IhBxBhuIY7VMzDPzKGnEEwhv9aA1/I8oZ4DKQPzAeGrl5Q==
+"@ecodev/natural-gallery-js@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-8.0.1.tgz#c3cfc21d6bdf5f0353ef498da16c92bfe8f5baf6"
+  integrity sha512-nVGiJsYlBfgWyk9MM/s+PD1N/Dg2VzEZQZUaZHrP25mfbDyx4IPmvKGR+I5Z7ALfu+HxpkcnS4R5mqNzoBzN+Q==
   dependencies:
     lodash-es "^4.17.21"
 

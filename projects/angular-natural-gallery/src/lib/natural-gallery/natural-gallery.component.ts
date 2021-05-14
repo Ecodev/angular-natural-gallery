@@ -1,5 +1,15 @@
-import {Component, EventEmitter, Inject, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
-import {ModelAttributes, Natural} from '@ecodev/natural-gallery-js';
+import {
+    Component,
+    ElementRef,
+    EventEmitter,
+    Inject,
+    Input,
+    OnInit,
+    Output,
+    ViewChild,
+    ViewEncapsulation,
+} from '@angular/core';
+import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 import {DOCUMENT} from '@angular/common';
 
 /** @dynamic */
@@ -9,23 +19,23 @@ import {DOCUMENT} from '@angular/common';
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./natural-gallery.component.scss'],
 })
-export class NaturalGalleryComponent implements OnInit {
-    @Input() public options;
-    @Input() public scrollable;
+export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
+    @Input() public options: NaturalGalleryOptions;
+    @Input() public scrollable: HTMLElement | undefined | null;
 
-    @Output() public activate = new EventEmitter();
-    @Output() public select = new EventEmitter();
-    @Output() public pagination = new EventEmitter();
-    @Output() public zoom = new EventEmitter();
+    @Output() public readonly activate = new EventEmitter<CustomEventDetailMap<T>['activate']>();
+    @Output() public readonly select = new EventEmitter<CustomEventDetailMap<T>['select']>();
+    @Output() public readonly pagination = new EventEmitter<CustomEventDetailMap<T>['pagination']>();
+    @Output() public readonly zoom = new EventEmitter<CustomEventDetailMap<T>['zoom']>();
 
-    @ViewChild('gallery', {static: true}) private galleryElement;
-    @ViewChild('pswp', {static: true}) private pswpElement;
+    @ViewChild('gallery', {static: true}) private galleryElement: ElementRef;
+    @ViewChild('pswp', {static: true}) private pswpElement: ElementRef;
 
-    public gallery: Natural;
+    public gallery: Natural<T>;
 
-    private _items: ModelAttributes[];
+    private _items: T[];
 
-    @Input() set items(items: ModelAttributes[]) {
+    @Input() set items(items: T[]) {
         this._items = items;
         if (this.gallery) {
             this.gallery.setItems(items);
