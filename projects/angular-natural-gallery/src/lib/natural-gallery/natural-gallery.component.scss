@@ -1,7 +1,7 @@
 @import '~photoswipe/dist/photoswipe';
 @import '../styles/photoswipe-default-skin';
-@import '~@ecodev/natural-gallery-js/natural-gallery';
-@import '~@ecodev/natural-gallery-js/themes/natural';
+@import '../../../../../node_modules/@ecodev/natural-gallery-js/natural-gallery';
+@import '../../../../../node_modules/@ecodev/natural-gallery-js/themes/natural';
 
 .pswp__button,
 .pswp__button--arrow--left:before,
