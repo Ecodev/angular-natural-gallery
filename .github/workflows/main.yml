@@ -68,7 +68,7 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   registry-url: 'https://registry.npmjs.org'
-            - run: npm publish --access public dist/angular-natural-gallery
+            - run: npm publish --access public dist/angular-natural-gallery/
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -76,7 +76,7 @@ jobs:
             - uses: actions/setup-node@v2
               with:
                   registry-url: 'https://npm.pkg.github.com'
-            - run: npm publish --access public dist/angular-natural-gallery
+            - run: npm publish --access public dist/angular-natural-gallery/
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
