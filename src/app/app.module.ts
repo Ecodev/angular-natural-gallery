@@ -7,7 +7,6 @@ import {NaturalGalleryModule} from '@ecodev/angular-natural-gallery';
 
 @NgModule({
     declarations: [AppComponent],
-    entryComponents: [],
     imports: [BrowserModule, BrowserAnimationsModule, NaturalGalleryModule],
     bootstrap: [AppComponent],
 })

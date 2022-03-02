@@ -4,6 +4,66 @@ import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
 import {ModelAttributes} from '@ecodev/natural-gallery-js/js/galleries/AbstractGallery';
 
 type Model = ModelAttributes & {thumbnailWidth: number; thumbnailHeight: number};
+type Image = {
+    id: string;
+    created_at: string;
+    updated_at: string;
+    width: number;
+    height: number;
+    color: string;
+    description: null | string;
+    urls: {
+        raw: string;
+        full: string;
+        regular: string;
+        small: string;
+        thumb: string;
+    };
+    links: {
+        self: string;
+        html: string;
+        download: string;
+        download_location: string;
+    };
+    categories: [];
+    sponsored: false;
+    likes: number;
+    liked_by_user: false;
+    current_user_collections: [];
+    slug: string | null;
+    user: {
+        id: string;
+        updated_at: string;
+        username: string;
+        name: string;
+        first_name: string;
+        last_name: null | string;
+        twitter_username: null | string;
+        portfolio_url: null | string;
+        bio: null | string;
+        location: null | string;
+        links: {
+            self: string;
+            html: string;
+            photos: string;
+            likes: string;
+            portfolio: string;
+            following: string;
+            followers: string;
+        };
+        profile_image: {
+            small: string;
+            medium: string;
+            large: string;
+        };
+        instagram_username: null | string;
+        total_collections: number;
+        total_likes: number;
+        total_photos: number;
+    };
+    tags: {title: string}[];
+    photo_tags: {title: string}[];
+};
 
 @Component({
     selector: 'app-root',
@@ -23,18 +83,18 @@ export class AppComponent {
         activable: true,
     };
 
-    constructor() {
+    public constructor() {
         const images = this.getImages();
         this.items1 = images.slice(0, images.length / 2).map(this.mapImages);
         this.items2 = images.slice(images.length / 2).map(this.mapImages);
         this.items = this.items1;
     }
 
-    public addItems(items): void {
+    public addItems(items: Model[]): void {
         this.gallery.gallery.addItems(items);
     }
 
-    private mapImages(i): Model {
+    private mapImages(i: Image): Model {
         return {
             thumbnailSrc: i.urls.small,
             thumbnailWidth: (400 * i.width) / i.height,
@@ -46,11 +106,11 @@ export class AppComponent {
         };
     }
 
-    public log(val1, val2): void {
+    public log(val1: string, val2: unknown): void {
         console.log(val1, val2);
     }
 
-    public getImages(): any[] {
+    public getImages(): Image[] {
         return [
             {
                 id: 'cok-OxpkrKQ',

@@ -24,6 +24,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     @Input() public scrollable: HTMLElement | undefined | null;
 
     @Output() public readonly activate = new EventEmitter<CustomEventDetailMap<T>['activate']>();
+    // eslint-disable-next-line @angular-eslint/no-output-native
     @Output() public readonly select = new EventEmitter<CustomEventDetailMap<T>['select']>();
     @Output() public readonly pagination = new EventEmitter<CustomEventDetailMap<T>['pagination']>();
     @Output() public readonly zoom = new EventEmitter<CustomEventDetailMap<T>['zoom']>();
@@ -35,14 +36,14 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     private _items: T[];
 
-    @Input() set items(items: T[]) {
+    @Input() public set items(items: T[]) {
         this._items = items;
         if (this.gallery) {
             this.gallery.setItems(items);
         }
     }
 
-    constructor(@Inject(DOCUMENT) private readonly document: Document) {}
+    public constructor(@Inject(DOCUMENT) private readonly document: Document) {}
 
     public ngOnInit(): void {
         setTimeout(() => {

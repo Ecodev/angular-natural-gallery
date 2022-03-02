@@ -3,11 +3,7 @@
     "dest": "../../dist/angular-natural-gallery",
     "deleteDestPath": false,
     "lib": {
-        "entryFile": "src/public_api.ts",
-        "umdModuleIds": {
-            "@ecodev/natural-gallery-js": "@ecodev/natural-gallery-js",
-            "photoswipe": "photoswipe"
-        }
+        "entryFile": "src/public_api.ts"
     },
     "allowedNonPeerDependencies": ["@ecodev/natural-gallery-js", "@types/photoswipe", "photoswipe"]
 }
