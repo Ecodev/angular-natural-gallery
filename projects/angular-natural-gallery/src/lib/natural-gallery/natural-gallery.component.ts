@@ -29,8 +29,8 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     @Output() public readonly pagination = new EventEmitter<CustomEventDetailMap<T>['pagination']>();
     @Output() public readonly zoom = new EventEmitter<CustomEventDetailMap<T>['zoom']>();
 
-    @ViewChild('gallery', {static: true}) private galleryElement: ElementRef;
-    @ViewChild('pswp', {static: true}) private pswpElement: ElementRef;
+    @ViewChild('gallery', {static: true}) private galleryElement: ElementRef<HTMLElement>;
+    @ViewChild('pswp', {static: true}) private pswpElement: ElementRef<HTMLElement>;
 
     public gallery: Natural<T>;
 
