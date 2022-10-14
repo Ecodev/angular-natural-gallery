@@ -27,10 +27,8 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     // eslint-disable-next-line @angular-eslint/no-output-native
     @Output() public readonly select = new EventEmitter<CustomEventDetailMap<T>['select']>();
     @Output() public readonly pagination = new EventEmitter<CustomEventDetailMap<T>['pagination']>();
-    @Output() public readonly zoom = new EventEmitter<CustomEventDetailMap<T>['zoom']>();
 
     @ViewChild('gallery', {static: true}) private galleryElement: ElementRef<HTMLElement>;
-    @ViewChild('pswp', {static: true}) private pswpElement: ElementRef<HTMLElement>;
 
     public gallery: Natural<T>;
 
@@ -47,19 +45,14 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     public ngOnInit(): void {
         setTimeout(() => {
-            // Moves the PhotoSwipe template to body to prevent layout to be behind or hidden (because overflow) on a parent scrollable div
-            this.document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
+            
             this.gallery = new Natural(
                 this.galleryElement.nativeElement,
                 this.options,
-                this.pswpElement.nativeElement,
                 this.scrollable,
             );
+            
             this.gallery.init();
-
-            this.gallery.addEventListener('zoom', ev => {
-                this.zoom.emit(ev.detail);
-            });
 
             this.gallery.addEventListener('select', ev => {
                 this.select.emit(ev.detail);

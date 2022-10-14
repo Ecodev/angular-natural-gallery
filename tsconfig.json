@@ -14,10 +14,12 @@
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2017", "dom"],
         "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
         "paths": {
             "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
-            "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"]
-        }
+            "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],
+            "photoswipe/lightbox": ["./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
+        },
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,

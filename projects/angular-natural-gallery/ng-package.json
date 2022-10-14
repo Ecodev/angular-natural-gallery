@@ -5,5 +5,9 @@
     "lib": {
         "entryFile": "src/public_api.ts"
     },
-    "allowedNonPeerDependencies": ["@ecodev/natural-gallery-js", "@types/photoswipe", "photoswipe"]
+    "allowedNonPeerDependencies": [
+        "@ecodev/natural-gallery-js",
+        "photoswipe",
+        "photoswipe/lightbox"
+    ]
 }
