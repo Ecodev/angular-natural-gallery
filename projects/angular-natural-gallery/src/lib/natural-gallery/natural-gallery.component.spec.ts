@@ -1,8 +1,8 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-
+import {By} from '@angular/platform-browser';
 import {NaturalGalleryComponent} from './natural-gallery.component';
 
-xdescribe('NaturalGalleryComponent', () => {
+describe('NaturalGalleryComponent', () => {
     let comp: NaturalGalleryComponent;
     let fixture: ComponentFixture<NaturalGalleryComponent>;
 
@@ -16,6 +16,12 @@ xdescribe('NaturalGalleryComponent', () => {
         comp = fixture.componentInstance; // BannerComponent test instance
 
         // query for the title <h1> by CSS element selector
+    });
+
+    it('should have Photoswipe template', () => {
+        const de = fixture.debugElement.query(By.css('.angular-natural-gallery-container'));
+        const el = de.nativeElement;
+        expect(el).not.toBeNull();
     });
 
 });
