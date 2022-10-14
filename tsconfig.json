@@ -19,7 +19,7 @@
             "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
             "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],
             "photoswipe/lightbox": ["./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
-        },
+        }
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,

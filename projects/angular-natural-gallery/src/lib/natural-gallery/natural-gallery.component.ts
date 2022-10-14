@@ -45,13 +45,8 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     public ngOnInit(): void {
         setTimeout(() => {
-            
-            this.gallery = new Natural(
-                this.galleryElement.nativeElement,
-                this.options,
-                this.scrollable,
-            );
-            
+            this.gallery = new Natural(this.galleryElement.nativeElement, this.options, this.scrollable);
+
             this.gallery.init();
 
             this.gallery.addEventListener('select', ev => {

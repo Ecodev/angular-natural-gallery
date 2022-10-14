@@ -23,5 +23,4 @@ describe('NaturalGalleryComponent', () => {
         const el = de.nativeElement;
         expect(el).not.toBeNull();
     });
-
 });
