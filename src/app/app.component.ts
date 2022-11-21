@@ -1,7 +1,7 @@
 // tslint:disable:max-line-length
 import {Component, ViewChild} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
-import {ModelAttributes} from '@ecodev/natural-gallery-js/js/galleries/AbstractGallery';
+import {ModelAttributes, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 type Model = ModelAttributes & {thumbnailWidth: number; thumbnailHeight: number};
 type Image = {
@@ -76,12 +76,15 @@ export class AppComponent {
     public items1: Model[];
     public items2: Model[];
 
-    public options = {
+    public options: NaturalGalleryOptions = {
         rowHeight: 400,
         lightbox: true,
         selectable: true,
         activable: true,
+        showLabels: 'always'
     };
+    
+    private labelHoverActivated = this.options.showLabels === 'hover';
 
     public constructor() {
         const images = this.getImages();
@@ -92,6 +95,11 @@ export class AppComponent {
 
     public addItems(items: Model[]): void {
         this.gallery.gallery.addItems(items);
+    }
+    
+    public toggleLabelHover(): void {
+        this.labelHoverActivated = !this.labelHoverActivated;
+        this.gallery.gallery.setLabelHover(this.labelHoverActivated);
     }
 
     private mapImages(i: Image): Model {
