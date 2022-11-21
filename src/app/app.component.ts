@@ -81,9 +81,9 @@ export class AppComponent {
         lightbox: true,
         selectable: true,
         activable: true,
-        showLabels: 'always'
+        showLabels: 'always',
     };
-    
+
     private labelHoverActivated = this.options.showLabels === 'hover';
 
     public constructor() {
@@ -96,7 +96,7 @@ export class AppComponent {
     public addItems(items: Model[]): void {
         this.gallery.gallery.addItems(items);
     }
-    
+
     public toggleLabelHover(): void {
         this.labelHoverActivated = !this.labelHoverActivated;
         this.gallery.gallery.setLabelHover(this.labelHoverActivated);
