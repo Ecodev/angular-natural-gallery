@@ -10,8 +10,7 @@
         }
     },
     "dependencies": {
-        "@ecodev/natural-gallery-js": "^9.0.0",
-        "photoswipe": "^5.3.2",
+        "@ecodev/natural-gallery-js": "^9.1.0",
         "tslib": "^2.0.0"
     },
     "peerDependencies": {
