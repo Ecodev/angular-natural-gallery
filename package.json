@@ -38,9 +38,6 @@
     "bugs": {
         "url": "https://github.com/Ecodev/angular-natural-gallery/issues"
     },
-    "dependencies": {
-        "photoswipe": "^5.3.2"
-    },
     "devDependencies": {
         "@angular-devkit/build-angular": "^14.1.1",
         "@angular-eslint/builder": "^14.0.2",
@@ -74,6 +71,7 @@
         "karma-jasmine": "~5.1.0",
         "karma-jasmine-html-reporter": "^2.0.0",
         "ng-packagr": "^14.1.0",
+        "photoswipe": "^5.3.2",
         "prettier": "2.7.1",
         "rxjs": "^7.5.6",
         "scss-bundle": "^3.1.2",
