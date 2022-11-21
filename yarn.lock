@@ -1355,10 +1355,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@ecodev/natural-gallery-js@^9.0.0":
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-9.0.0.tgz#8c33f108638b3932b3600a56cb1c708770c17e06"
-  integrity sha512-YJet5DD49cPedoLMTwlZGhN5C5uaiguztYSkFAtUWPppPKf2iF6tX+5HAWLL3zr7OfVbP7KcZ/qxG9gRIJ7btg==
+"@ecodev/natural-gallery-js@^9.1.0":
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-9.1.0.tgz#41fe43669f847841b6321df0cfc8c080054ccbad"
+  integrity sha512-wDtYn/3uyQSTXsy6cqy0jy0KxUEHcuAvu92lyu44DC+d5SMYOW/50eHl8rLQ49ECYEUE6Y0qbtU1RxXhD55nrw==
   dependencies:
     lodash-es "^4.17.21"
 
