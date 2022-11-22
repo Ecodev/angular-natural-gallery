@@ -7,6 +7,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "prettier": "./node_modules/.bin/prettier --check .",
+        "prettier-fix": "./node_modules/.bin/prettier --write .",
         "e2e": "ng e2e",
         "build-lib": "ng build angular-natural-gallery && cp -v README.md dist/angular-natural-gallery/ && scss-bundle --config scss-bundle.config.json && cd dist/angular-natural-gallery && yarn version --no-git-tag-version --new-version `git describe --tags --always`",
         "build-docs": "yarn build-lib && ng build demo --aot --base-href /angular-natural-gallery/ && cp dist/demo/index.html dist/demo/404.html",

@@ -30,14 +30,18 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     @ViewChild('gallery', {static: true}) private galleryElement: ElementRef<HTMLElement>;
 
-    public gallery: Natural<T>;
+    public readonly gallery = new Promise<Natural<T>>(resolve => {
+        this.resolve = resolve;
+    });
+
+    private resolve: (value: Natural<T>) => void;
 
     private _items: T[];
 
     @Input() public set items(items: T[]) {
         this._items = items;
         if (this.gallery) {
-            this.gallery.setItems(items);
+            this.gallery.then(gallery => gallery.setItems(items));
         }
     }
 
@@ -45,25 +49,27 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     public ngOnInit(): void {
         setTimeout(() => {
-            this.gallery = new Natural(this.galleryElement.nativeElement, this.options, this.scrollable);
+            const gallery = new Natural<T>(this.galleryElement.nativeElement, this.options, this.scrollable);
 
-            this.gallery.init();
+            gallery.init();
 
-            this.gallery.addEventListener('select', ev => {
+            gallery.addEventListener('select', ev => {
                 this.select.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('activate', ev => {
+            gallery.addEventListener('activate', ev => {
                 this.activate.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('pagination', ev => {
+            gallery.addEventListener('pagination', ev => {
                 this.pagination.emit(ev.detail);
             });
 
             if (this._items && this._items.length) {
-                this.gallery.setItems(this._items);
+                gallery.setItems(this._items);
             }
+
+            this.resolve(gallery);
         });
     }
 }
