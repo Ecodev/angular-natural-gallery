@@ -91,7 +91,7 @@ export class AppComponent {
     }
 
     public addItems(items: Model[]): void {
-        this.gallery.gallery.addItems(items);
+        this.gallery.gallery.then(gallery => gallery.addItems(items));
     }
 
     private mapImages(i: Image): Model {

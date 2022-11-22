@@ -32,14 +32,18 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     @ViewChild('gallery', {static: true}) private galleryElement: ElementRef<HTMLElement>;
     @ViewChild('pswp', {static: true}) private pswpElement: ElementRef<HTMLElement>;
 
-    public gallery: Natural<T>;
+    public readonly gallery = new Promise<Natural<T>>(resolve => {
+        this.resolve = resolve;
+    });
+
+    private resolve: (value: Natural<T>) => void;
 
     private _items: T[];
 
     @Input() public set items(items: T[]) {
         this._items = items;
         if (this.gallery) {
-            this.gallery.setItems(items);
+            this.gallery.then(gallery => gallery.setItems(items));
         }
     }
 
@@ -49,33 +53,35 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
         setTimeout(() => {
             // Moves the PhotoSwipe template to body to prevent layout to be behind or hidden (because overflow) on a parent scrollable div
             this.document.getElementsByTagName('body')[0].appendChild(this.pswpElement.nativeElement);
-            this.gallery = new Natural(
+            const gallery = new Natural<T>(
                 this.galleryElement.nativeElement,
                 this.options,
                 this.pswpElement.nativeElement,
                 this.scrollable,
             );
-            this.gallery.init();
+            gallery.init();
 
-            this.gallery.addEventListener('zoom', ev => {
+            gallery.addEventListener('zoom', ev => {
                 this.zoom.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('select', ev => {
+            gallery.addEventListener('select', ev => {
                 this.select.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('activate', ev => {
+            gallery.addEventListener('activate', ev => {
                 this.activate.emit(ev.detail);
             });
 
-            this.gallery.addEventListener('pagination', ev => {
+            gallery.addEventListener('pagination', ev => {
                 this.pagination.emit(ev.detail);
             });
 
             if (this._items && this._items.length) {
-                this.gallery.setItems(this._items);
+                gallery.setItems(this._items);
             }
+
+            this.resolve(gallery);
         });
     }
 }
