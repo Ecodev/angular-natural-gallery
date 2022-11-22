@@ -94,12 +94,12 @@ export class AppComponent {
     }
 
     public addItems(items: Model[]): void {
-        this.gallery.gallery.addItems(items);
+        this.gallery.gallery.then(gallery => gallery.addItems(items));
     }
 
     public toggleLabelHover(): void {
         this.labelHoverActivated = !this.labelHoverActivated;
-        this.gallery.gallery.setLabelHover(this.labelHoverActivated);
+        this.gallery.gallery.then(gallery => gallery.setLabelHover(this.labelHoverActivated));
     }
 
     private mapImages(i: Image): Model {
