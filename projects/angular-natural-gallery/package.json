@@ -10,7 +10,7 @@
         }
     },
     "dependencies": {
-        "@ecodev/natural-gallery-js": "^9.1.0",
+        "@ecodev/natural-gallery-js": "^9.1.1",
         "tslib": "^2.0.0"
     },
     "peerDependencies": {
