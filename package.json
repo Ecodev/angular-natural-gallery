@@ -5,7 +5,7 @@
         "postinstall": "playwright install chromium",
         "dev": "ng serve",
         "test": "ng test",
-        "lint": "ng lint",
+        "lint": "ng lint --max-warnings 0",
         "prettier": "./node_modules/.bin/prettier --check .",
         "prettier-fix": "./node_modules/.bin/prettier --write .",
         "e2e": "ng e2e",
