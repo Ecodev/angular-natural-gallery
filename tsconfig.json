@@ -10,7 +10,7 @@
         "experimentalDecorators": true,
         "strictNullChecks": true,
         "importHelpers": true,
-        "target": "es2020",
+        "target": "ES2022",
         "typeRoots": ["node_modules/@types"],
         "lib": ["es2017", "dom"],
         "allowSyntheticDefaultImports": true,
@@ -20,7 +20,8 @@
             "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],
             "photoswipe/lightbox": ["./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
         },
-        "noImplicitOverride": true
+        "noImplicitOverride": true,
+        "useDefineForClassFields": false
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,
