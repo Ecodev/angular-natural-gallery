@@ -24,8 +24,17 @@
             background-color: mat-color($foreground, base, 0.1) !important;
         }
 
-        .natural-gallery-js .figure.selected .selectBtn {
-            color: mat-color($accent) !important;
+        .natural-gallery-js .selectBtn .marker {
+            border-color: mat-color($accent);
+        }
+
+        .natural-gallery-js .figure.selected .marker {
+            background: mat-color($accent);
+        }
+
+        .natural-gallery-js .figure.selected .marker::before,
+        .natural-gallery-js .figure.selected .marker::after {
+            background: mat-color($accent, default-contrast);
         }
 
         .natural-gallery-js .button {
