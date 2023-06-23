@@ -11,10 +11,10 @@
     },
     "dependencies": {
         "@ecodev/natural-gallery-js": "^9.2.0",
-        "tslib": "^2.0.0"
+        "tslib": "^2.5.3"
     },
     "peerDependencies": {
-        "@angular/common": "^15.1.0",
-        "@angular/core": "^15.1.0"
+        "@angular/common": "^16.1.0",
+        "@angular/core": "^16.1.0"
     }
 }
