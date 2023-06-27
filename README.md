@@ -9,38 +9,21 @@ Thin wrapper for [@ecodev/natural-gallery-js](https://github.com/Ecodev/natural-
 To install this library, run:
 
 ```bash
-$ yarn add @ecodev/angular-natural-gallery
+yarn add @ecodev/angular-natural-gallery
 ```
 
-## Consuming your library in your Angular `AppModule`
+## Consuming the library
+
+In your standalone component, import `NaturalGalleryComponent`:
 
 ```typescript
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-
-import {AppComponent} from './app.component';
-
-// Import the library
-import {NaturalGalleryModule} from '@ecodev/angular-natural-gallery';
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-
-    // Specify the library as an import
-    NaturalGalleryModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+@Component({
+    selector: 'app-root',
+    template: '<natural-gallery></natural-gallery>',
+    standalone: true,
+    imports: [NaturalGalleryComponent],
 })
-export class AppModule {}
-```
-
-Once the library is imported, you can use its components, directives and pipes in your Angular application:
-
-```html
-<natural-gallery></natural-gallery>
+export class AppComponent {}
 ```
 
 ## Development

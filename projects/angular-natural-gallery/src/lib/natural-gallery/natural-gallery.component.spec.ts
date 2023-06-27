@@ -6,10 +6,6 @@ describe('NaturalGalleryComponent', () => {
     let fixture: ComponentFixture<NaturalGalleryComponent>;
 
     beforeEach(() => {
-        TestBed.configureTestingModule({
-            declarations: [NaturalGalleryComponent], // declare the test component
-        });
-
         fixture = TestBed.createComponent(NaturalGalleryComponent);
     });
 

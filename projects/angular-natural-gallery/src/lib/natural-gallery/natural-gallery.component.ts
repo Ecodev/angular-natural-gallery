@@ -18,6 +18,7 @@ import {DOCUMENT} from '@angular/common';
     templateUrl: 'natural-gallery.component.html',
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./natural-gallery.component.scss'],
+    standalone: true,
 })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
     @Input() public options: NaturalGalleryOptions;
