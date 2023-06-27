@@ -18,10 +18,10 @@ In your standalone component, import `NaturalGalleryComponent`:
 
 ```typescript
 @Component({
-    selector: 'app-root',
-    template: '<natural-gallery></natural-gallery>',
-    standalone: true,
-    imports: [NaturalGalleryComponent],
+  selector: 'app-root',
+  template: '<natural-gallery></natural-gallery>',
+  standalone: true,
+  imports: [NaturalGalleryComponent],
 })
 export class AppComponent {}
 ```
