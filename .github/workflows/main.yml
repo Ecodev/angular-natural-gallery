@@ -12,7 +12,7 @@ jobs:
               with:
                   cache: 'yarn'
             - run: yarn --frozen-lockfile
-            - run: yarn build-docs
+            - run: yarn build-demo
             - uses: actions/upload-artifact@v3
               with:
                   name: dist
