@@ -19,7 +19,7 @@ In your standalone component, import `NaturalGalleryComponent`:
 ```typescript
 @Component({
   selector: 'app-root',
-  template: '<natural-gallery></natural-gallery>',
+  template: '<natural-gallery [options]="{rowHeight: 400}"></natural-gallery>',
   standalone: true,
   imports: [NaturalGalleryComponent],
 })

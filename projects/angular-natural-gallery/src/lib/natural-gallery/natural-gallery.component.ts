@@ -15,13 +15,14 @@ import {DOCUMENT} from '@angular/common';
 /** @dynamic */
 @Component({
     selector: 'natural-gallery',
-    templateUrl: 'natural-gallery.component.html',
-    encapsulation: ViewEncapsulation.None,
+    templateUrl: './natural-gallery.component.html',
     styleUrls: ['./natural-gallery.component.scss'],
+    // eslint-disable-next-line @angular-eslint/use-component-view-encapsulation
+    encapsulation: ViewEncapsulation.None,
     standalone: true,
 })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
-    @Input() public options: NaturalGalleryOptions;
+    @Input({required: true}) public options!: NaturalGalleryOptions;
     @Input() public scrollable: HTMLElement | undefined | null;
 
     @Output() public readonly activate = new EventEmitter<CustomEventDetailMap<T>['activate']>();
@@ -29,21 +30,20 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     @Output() public readonly select = new EventEmitter<CustomEventDetailMap<T>['select']>();
     @Output() public readonly pagination = new EventEmitter<CustomEventDetailMap<T>['pagination']>();
 
-    @ViewChild('gallery', {static: true}) private galleryElement: ElementRef<HTMLElement>;
+    @ViewChild('gallery', {static: true}) private galleryElement!: ElementRef<HTMLElement>;
 
     public readonly gallery = new Promise<Natural<T>>(resolve => {
         this.resolve = resolve;
     });
 
-    private resolve: (value: Natural<T>) => void;
+    private resolve!: (value: Natural<T>) => void;
 
-    private _items: T[];
+    private _items: T[] = [];
 
-    @Input() public set items(items: T[]) {
+    @Input()
+    public set items(items: T[]) {
         this._items = items;
-        if (this.gallery) {
-            this.gallery.then(gallery => gallery.setItems(items));
-        }
+        this.gallery.then(gallery => gallery.setItems(items));
     }
 
     public constructor(@Inject(DOCUMENT) private readonly document: Document) {}
@@ -66,7 +66,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
                 this.pagination.emit(ev.detail);
             });
 
-            if (this._items && this._items.length) {
+            if (this._items.length) {
                 gallery.setItems(this._items);
             }
 

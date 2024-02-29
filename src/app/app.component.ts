@@ -1,4 +1,3 @@
-// tslint:disable:max-line-length
 import {Component, ViewChild} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
 import {ModelAttributes, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
@@ -72,7 +71,7 @@ type Image = {
     imports: [NaturalGalleryComponent],
 })
 export class AppComponent {
-    @ViewChild('gallery', {static: true}) private gallery: NaturalGalleryComponent;
+    @ViewChild('gallery', {static: true}) private gallery!: NaturalGalleryComponent;
 
     public items: Model[];
     public items1: Model[];

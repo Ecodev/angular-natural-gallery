@@ -2,30 +2,35 @@
     "compileOnSave": false,
     "compilerOptions": {
         "baseUrl": "./",
-        "module": "es2020",
         "outDir": "./dist/out-tsc",
         "sourceMap": true,
         "declaration": false,
-        "moduleResolution": "node",
+        "downlevelIteration": true,
         "experimentalDecorators": true,
-        "strictNullChecks": true,
+        "module": "ES2022",
+        "moduleResolution": "node",
         "importHelpers": true,
         "target": "ES2022",
+        "strict": true,
+        "strictNullChecks": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
         "typeRoots": ["node_modules/@types"],
-        "lib": ["es2017", "dom"],
-        "allowSyntheticDefaultImports": true,
+        "lib": ["ES2022", "dom"],
         "skipLibCheck": true,
         "paths": {
             "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
             "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],
             "photoswipe/lightbox": ["./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
         },
+        "allowSyntheticDefaultImports": true,
         "noImplicitOverride": true,
         "useDefineForClassFields": false
     },
     "angularCompilerOptions": {
-        "fullTemplateTypeCheck": true,
         "strictInjectionParameters": true,
-        "strictTemplates": true
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true,
+        "fullTemplateTypeCheck": true
     }
 }
