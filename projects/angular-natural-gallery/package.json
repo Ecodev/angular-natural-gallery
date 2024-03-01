@@ -6,11 +6,11 @@
     "sideEffects": false,
     "exports": {
         ".": {
-            "sass": "./theming/_natural-gallery.theme.scss"
+            "sass": "./styles/_natural-gallery.scss"
         }
     },
     "dependencies": {
-        "@ecodev/natural-gallery-js": "^9.2.0",
+        "@ecodev/natural-gallery-js": "^10.0.1",
         "tslib": "^2.5.3"
     },
     "peerDependencies": {

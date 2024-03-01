@@ -1,0 +1,4 @@
+@use '../projects/angular-natural-gallery/src/lib/styles/natural-gallery';
+
+@include natural-gallery.natural-gallery-base();
+@include natural-gallery.natural-gallery-default-theme();

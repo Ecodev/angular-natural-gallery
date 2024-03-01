@@ -1,0 +1,11 @@
+@forward './natural-gallery.theme' show natural-gallery-theme;
+
+// This is the base CSS that must be included to have a functional PhotoSwipe
+@mixin natural-gallery-base() {
+    @import '@ecodev/natural-gallery-js/natural-gallery.css';
+}
+
+// This is a basic theme that is not dependent on Angular Material
+@mixin natural-gallery-default-theme() {
+    @import '@ecodev/natural-gallery-js/themes/natural.css';
+}
