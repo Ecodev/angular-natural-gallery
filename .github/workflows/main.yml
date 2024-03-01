@@ -10,6 +10,7 @@ jobs:
                   fetch-depth: 0 # Need all tags to get a version number in-between tags
             - uses: actions/setup-node@v3
               with:
+                  node-version: '18'
                   cache: 'yarn'
             - run: yarn --frozen-lockfile
             - run: yarn build-demo
@@ -24,6 +25,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
               with:
+                  node-version: '18'
                   cache: 'yarn'
             - run: yarn --frozen-lockfile
             - run: ./node_modules/.bin/ng test angular-natural-gallery --progress false --watch=false --browsers ChromeHeadlessCustom
@@ -34,6 +36,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
               with:
+                  node-version: '18'
                   cache: 'yarn'
             - run: yarn --frozen-lockfile
             - run: yarn lint
@@ -44,6 +47,7 @@ jobs:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
               with:
+                  node-version: '18'
                   cache: 'yarn'
             - run: yarn --frozen-lockfile
             - run: ./node_modules/.bin/prettier --check .
@@ -67,6 +71,7 @@ jobs:
             # Publish to npm
             - uses: actions/setup-node@v3
               with:
+                  node-version: '18'
                   registry-url: 'https://registry.npmjs.org'
             - run: npm publish --access public dist/angular-natural-gallery/
               env:
@@ -75,6 +80,7 @@ jobs:
             # Publish to GitHub Packages
             - uses: actions/setup-node@v3
               with:
+                  node-version: '18'
                   registry-url: 'https://npm.pkg.github.com'
             - run: npm publish --access public dist/angular-natural-gallery/
               env:
