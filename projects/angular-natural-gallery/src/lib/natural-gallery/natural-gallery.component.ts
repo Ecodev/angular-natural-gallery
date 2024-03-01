@@ -1,24 +1,10 @@
-import {
-    Component,
-    ElementRef,
-    EventEmitter,
-    Inject,
-    Input,
-    OnInit,
-    Output,
-    ViewChild,
-    ViewEncapsulation,
-} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
-import {DOCUMENT} from '@angular/common';
 
 /** @dynamic */
 @Component({
     selector: 'natural-gallery',
     templateUrl: './natural-gallery.component.html',
-    styleUrls: ['./natural-gallery.component.scss'],
-    // eslint-disable-next-line @angular-eslint/use-component-view-encapsulation
-    encapsulation: ViewEncapsulation.None,
     standalone: true,
 })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
@@ -45,8 +31,6 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
         this._items = items;
         this.gallery.then(gallery => gallery.setItems(items));
     }
-
-    public constructor(@Inject(DOCUMENT) private readonly document: Document) {}
 
     public ngOnInit(): void {
         setTimeout(() => {
