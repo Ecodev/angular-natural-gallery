@@ -31,6 +31,9 @@
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
         "strictTemplates": true,
-        "fullTemplateTypeCheck": true
+        "fullTemplateTypeCheck": true,
+        "extendedDiagnostics": {
+            "defaultCategory": "error"
+        }
     }
 }
