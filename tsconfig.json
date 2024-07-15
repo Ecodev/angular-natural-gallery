@@ -5,7 +5,7 @@
         "outDir": "./dist/out-tsc",
         "sourceMap": true,
         "declaration": false,
-        "downlevelIteration": true,
+        "esModuleInterop": true,
         "experimentalDecorators": true,
         "module": "ES2022",
         "moduleResolution": "node",
@@ -23,7 +23,6 @@
             "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],
             "photoswipe/lightbox": ["./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
         },
-        "allowSyntheticDefaultImports": true,
         "noImplicitOverride": true,
         "useDefineForClassFields": false
     },

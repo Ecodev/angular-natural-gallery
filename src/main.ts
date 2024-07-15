@@ -10,4 +10,6 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [importProvidersFrom(BrowserModule), provideAnimations()],
-}).catch(err => console.log(err));
+}).catch((err: unknown) => {
+    console.error(err);
+});
