@@ -15,16 +15,16 @@
         "strictNullChecks": true,
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "isolatedModules": true,
         "typeRoots": ["node_modules/@types"],
         "lib": ["ES2022", "dom"],
-        "skipLibCheck": true,
         "paths": {
             "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
             "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],
             "photoswipe/lightbox": ["./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
         },
-        "noImplicitOverride": true,
-        "useDefineForClassFields": false
+        "noImplicitOverride": true
     },
     "angularCompilerOptions": {
         "strictInjectionParameters": true,
