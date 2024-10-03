@@ -18,9 +18,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     @ViewChild('gallery', {static: true}) private galleryElement!: ElementRef<HTMLElement>;
 
-    public readonly gallery = new Promise<Natural<T>>(resolve => {
-        this.resolve = resolve;
-    });
+    public readonly gallery: Promise<Natural<T>>;
 
     private resolve!: (value: Natural<T>) => void;
 
@@ -30,6 +28,12 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     public set items(items: T[]) {
         this._items = items;
         this.gallery.then(gallery => gallery.setItems(items));
+    }
+
+    public constructor() {
+        this.gallery = new Promise<Natural<T>>(resolve => {
+            this.resolve = resolve;
+        });
     }
 
     public ngOnInit(): void {
