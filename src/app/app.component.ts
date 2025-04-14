@@ -67,7 +67,6 @@ type Image = {
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    standalone: true,
     imports: [NaturalGalleryComponent],
 })
 export class AppComponent {

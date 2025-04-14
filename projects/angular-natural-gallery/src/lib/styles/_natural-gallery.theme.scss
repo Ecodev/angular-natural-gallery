@@ -1,19 +1,22 @@
+@use 'sass:color';
+@use 'sass:map';
+
 // Original mat-color function of @angular/material library
 @function mat-color($palette, $hue: default, $opacity: null) {
     @if type-of($hue) == number and $hue >= 0 and $hue <= 1 {
         @return mat-color($palette, default, $hue);
     }
-    $color: map-get($palette, $hue);
+    $color: map.get($palette, $hue);
     $opacity: if($opacity == null, opacity($color), $opacity);
     @return rgba($color, $opacity);
 }
 
 @mixin natural-gallery-theme($theme) {
-    $primary: map-get($theme, primary);
-    $accent: map-get($theme, accent);
-    $warn: map-get($theme, warn);
-    $background: map-get($theme, background);
-    $foreground: map-get($theme, foreground);
+    $primary: map.get($theme, primary);
+    $accent: map.get($theme, accent);
+    $warn: map.get($theme, warn);
+    $background: map.get($theme, background);
+    $foreground: map.get($theme, foreground);
 
     natural-gallery {
         .natural-gallery-js .natural-gallery-body .figure {
@@ -49,11 +52,11 @@
 
         .natural-gallery-js .button {
             background: mat-color($primary) !important;
-            border-top: 1px solid lighten(mat-color($primary), 0.9);
+            border-top: 1px solid color.adjust(mat-color($primary), $lightness: 0.9%, $space: hsl);
         }
 
         .natural-gallery-js .button:hover {
-            background: darken(mat-color($primary), 10%) !important;
+            background: color.adjust(mat-color($primary), $lightness: -10%, $space: hsl) !important;
         }
     }
 }
