@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, viewChild} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
 import {ModelAttributes, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
@@ -70,7 +70,7 @@ type Image = {
     imports: [NaturalGalleryComponent],
 })
 export class AppComponent {
-    @ViewChild('gallery', {static: true}) private gallery!: NaturalGalleryComponent;
+    private readonly gallery = viewChild.required<NaturalGalleryComponent>('gallery');
 
     public items: Model[];
     public items1: Model[];
@@ -94,12 +94,12 @@ export class AppComponent {
     }
 
     public addItems(items: Model[]): void {
-        this.gallery.gallery.then(gallery => gallery.addItems(items));
+        this.gallery().gallery.then(gallery => gallery.addItems(items));
     }
 
     public toggleLabelHover(): void {
         this.labelHoverActivated = !this.labelHoverActivated;
-        this.gallery.gallery.then(gallery => gallery.setLabelHover(this.labelHoverActivated));
+        this.gallery().gallery.then(gallery => gallery.setLabelHover(this.labelHoverActivated));
     }
 
     private mapImages(i: Image): Model {

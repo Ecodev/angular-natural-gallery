@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, viewChild} from '@angular/core';
 import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 /** @dynamic */
@@ -16,7 +16,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     @Output() public readonly select = new EventEmitter<CustomEventDetailMap<T>['select']>();
     @Output() public readonly pagination = new EventEmitter<CustomEventDetailMap<T>['pagination']>();
 
-    @ViewChild('gallery', {static: true}) private galleryElement!: ElementRef<HTMLElement>;
+    private readonly galleryElement = viewChild.required<ElementRef<HTMLElement>>('gallery');
 
     public readonly gallery: Promise<Natural<T>>;
 
@@ -38,7 +38,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     public ngOnInit(): void {
         setTimeout(() => {
-            const gallery = new Natural<T>(this.galleryElement.nativeElement, this.options, this.scrollable);
+            const gallery = new Natural<T>(this.galleryElement().nativeElement, this.options, this.scrollable);
 
             gallery.init();
 
