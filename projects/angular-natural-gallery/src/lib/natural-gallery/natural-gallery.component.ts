@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, viewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, viewChild, output} from '@angular/core';
 import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 /** @dynamic */
@@ -11,10 +11,10 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     @Input({required: true}) public options!: NaturalGalleryOptions;
     @Input() public scrollable: HTMLElement | undefined | null;
 
-    @Output() public readonly activate = new EventEmitter<CustomEventDetailMap<T>['activate']>();
+    public readonly activate = output<CustomEventDetailMap<T>['activate']>();
     // eslint-disable-next-line @angular-eslint/no-output-native
-    @Output() public readonly select = new EventEmitter<CustomEventDetailMap<T>['select']>();
-    @Output() public readonly pagination = new EventEmitter<CustomEventDetailMap<T>['pagination']>();
+    public readonly select = output<CustomEventDetailMap<T>['select']>();
+    public readonly pagination = output<CustomEventDetailMap<T>['pagination']>();
 
     private readonly galleryElement = viewChild.required<ElementRef<HTMLElement>>('gallery');
 
