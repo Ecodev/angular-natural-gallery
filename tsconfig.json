@@ -27,6 +27,7 @@
         "noImplicitOverride": true
     },
     "angularCompilerOptions": {
+        "strictStandalone": true,
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
         "strictTemplates": true,
