@@ -40,7 +40,12 @@ function tsFiles(files, extraRules = {}) {
             '@typescript-eslint/no-unsafe-return': 'off',
             '@typescript-eslint/prefer-nullish-coalescing': 'off', // Usually a good idea, but sometimes dangerous false-positive
             '@typescript-eslint/unbound-method': 'off',
-            '@angular-eslint/prefer-signals': 'off', // Only when our code will be ready
+            '@angular-eslint/prefer-signals': [
+                'error',
+                {
+                    preferInputSignals: false, // Only when our code will be entirely migrated to `input()`
+                },
+            ],
             '@angular-eslint/directive-selector': [
                 'error',
                 {
