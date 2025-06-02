@@ -111,6 +111,9 @@ export class AppComponent {
             enlargedWidth: i.width,
             enlargedHeight: i.height,
             title: i.description ? i.description : i.user.name,
+            caption: i.description
+            ? `A photo showing: ${i.description}`
+            : `A photo by ${i.user.name}`,
         };
     }
 
