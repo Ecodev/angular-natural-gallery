@@ -18,45 +18,17 @@
     $background: map.get($theme, background);
     $foreground: map.get($theme, foreground);
 
-    natural-gallery {
-        .natural-gallery-js .natural-gallery-body .figure {
-            background-color: mat-color($primary, 0.1);
-        }
-
-        .natural-gallery-js .natural-gallery-body .figure.errored {
-            background-color: mat-color($warn, 0.1);
-        }
-
-        /* Highlighted */
-        .natural-gallery-js .natural-gallery-next svg {
-            color: mat-color($primary) !important;
-            fill: currentColor !important;
-        }
-
-        .natural-gallery-js .natural-gallery-next:hover {
-            background-color: mat-color($foreground, base, 0.1) !important;
-        }
-
-        .natural-gallery-js .selectBtn .marker {
-            border-color: mat-color($accent);
-        }
-
-        .natural-gallery-js .figure.selected .marker {
-            background: mat-color($accent);
-        }
-
-        .natural-gallery-js .figure.selected .marker::before,
-        .natural-gallery-js .figure.selected .marker::after {
-            background: mat-color($accent, default-contrast);
-        }
-
-        .natural-gallery-js .button {
-            background: mat-color($primary) !important;
-            border-top: 1px solid color.adjust(mat-color($primary), $lightness: 0.9%, $space: hsl);
-        }
-
-        .natural-gallery-js .button:hover {
-            background: color.adjust(mat-color($primary), $lightness: -10%, $space: hsl) !important;
-        }
+    .natural-gallery-js {
+        --ngjs-figure-radius: 4px;
+        --ngjs-focus-outline: 1px solid #{mat-color($accent)};
+        --ngjs-marker-border-color: #{mat-color($accent)};
+        --ngjs-marker-check-color: transparent;
+        --ngjs-selected-marker-color: #{mat-color($accent)};
+        --ngjs-selected-marker-check: #{mat-color($accent, default-contrast)};
+        --ngjs-link-bg: rgb(0, 0, 0, 0.7);
+        --ngjs-link-color: white;
+        --ngjs-link-radius: 4px;
+        --ngjs-link-hover-bg: rgb(0, 0, 0);
+        --ngjs-link-hover-color: white;
     }
 }
