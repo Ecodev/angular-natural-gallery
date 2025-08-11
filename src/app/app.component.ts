@@ -1,6 +1,6 @@
 import {Component, viewChild} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
-import {ModelAttributes, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
+import {ModelAttributes, NaturalGalleryOptions, LabelVisibility} from '@ecodev/natural-gallery-js';
 
 type Model = ModelAttributes & {thumbnailWidth: number; thumbnailHeight: number};
 type Image = {
@@ -81,10 +81,10 @@ export class AppComponent {
         lightbox: true,
         selectable: true,
         activable: true,
-        showLabels: 'always',
+        labelVisibility: LabelVisibility.ALWAYS,
     };
 
-    private labelHoverActivated = this.options.showLabels === 'hover';
+    private labelHoverActivated = this.options.labelVisibility === LabelVisibility.HOVER;
 
     public constructor() {
         const images = this.getImages();

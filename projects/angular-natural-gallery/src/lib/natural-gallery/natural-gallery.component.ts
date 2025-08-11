@@ -40,8 +40,6 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
         setTimeout(() => {
             const gallery = new Natural<T>(this.galleryElement().nativeElement, this.options, this.scrollable);
 
-            gallery.init();
-
             gallery.addEventListener('select', ev => {
                 this.select.emit(ev.detail);
             });
