@@ -1161,10 +1161,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.6.3.tgz#f13c7c205915eb91ae54c557f5e92bddd8be0e83"
   integrity sha512-4B4OijXeVNOPZlYA2oEwWOTkzyltLao+xbotHQeqN++Rv27Y6s818+n2Qkp8q+Fxhn0t/5lA5X1Mxktud8eayQ==
 
-"@ecodev/natural-gallery-js@^11.1.0":
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-11.1.0.tgz#611b8af64b0e587a8f386ca910ace72b3d3ae43b"
-  integrity sha512-SqvI0713kYpo0MPWrDw77RmV3b4l4sjImeciXHxndnRwUFqVz2P0dYr62FVC5jmNwgU7ytc+LUTNNBuLsBMzFQ==
+"@ecodev/natural-gallery-js@^11.1.1":
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/@ecodev/natural-gallery-js/-/natural-gallery-js-11.1.1.tgz#adcbac921ecc60b3df00337653dd5fd3a4f78126"
+  integrity sha512-YhQfE0eFpEib5QreUNd3l0OPSLjt1iC1YF6hohlpsaIRrAopWqiqqR/Bw8UmRiFZs6tK5gMKRCNGP8FY94vP0g==
 
 "@esbuild/aix-ppc64@0.25.2":
   version "0.25.2"
