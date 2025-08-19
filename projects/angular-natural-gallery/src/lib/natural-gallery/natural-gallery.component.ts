@@ -15,6 +15,8 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     // eslint-disable-next-line @angular-eslint/no-output-native
     public readonly select = output<CustomEventDetailMap<T>['select']>();
     public readonly pagination = output<CustomEventDetailMap<T>['pagination']>();
+    public readonly itemAddedToDom = output<CustomEventDetailMap<T>['item-added-to-dom']>();
+    public readonly itemDisplayed = output<CustomEventDetailMap<T>['item-displayed']>();
 
     private readonly galleryElement = viewChild.required<ElementRef<HTMLElement>>('gallery');
 
@@ -50,6 +52,14 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
             gallery.addEventListener('pagination', ev => {
                 this.pagination.emit(ev.detail);
+            });
+
+            gallery.addEventListener('item-added-to-dom', ev => {
+                this.itemAddedToDom.emit(ev.detail);
+            });
+
+            gallery.addEventListener('item-displayed', ev => {
+                this.itemDisplayed.emit(ev.detail);
             });
 
             if (this._items.length) {
