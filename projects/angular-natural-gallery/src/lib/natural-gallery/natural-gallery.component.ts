@@ -4,9 +4,9 @@ import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} f
 /** @dynamic */
 @Component({
     selector: 'natural-gallery',
-    templateUrl: './natural-gallery.component.html',
     standalone: true,
-})
+    templateUrl: './natural-gallery.component.html'
+  })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
     @Input({required: true}) public options!: NaturalGalleryOptions;
     @Input() public scrollable: HTMLElement | undefined | null;

@@ -66,9 +66,9 @@ type Image = {
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
     imports: [NaturalGalleryComponent],
-})
+    templateUrl: './app.component.html'
+  })
 export class AppComponent {
     private readonly gallery = viewChild.required<NaturalGalleryComponent>('gallery');
 
