@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, viewChild, output} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, viewChild, output, input} from '@angular/core';
 import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 /** @dynamic */
@@ -8,8 +8,8 @@ import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} f
     templateUrl: './natural-gallery.component.html',
 })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
-    @Input({required: true}) public options!: NaturalGalleryOptions;
-    @Input() public scrollable: HTMLElement | undefined | null;
+    public readonly options = input.required<NaturalGalleryOptions>();
+    public readonly scrollable = input<HTMLElement | null>();
 
     public readonly activate = output<CustomEventDetailMap<T>['activate']>();
     // eslint-disable-next-line @angular-eslint/no-output-native
@@ -40,7 +40,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     public ngOnInit(): void {
         setTimeout(() => {
-            const gallery = new Natural<T>(this.galleryElement().nativeElement, this.options, this.scrollable);
+            const gallery = new Natural<T>(this.galleryElement().nativeElement, this.options(), this.scrollable());
 
             gallery.addEventListener('select', ev => {
                 this.select.emit(ev.detail);
