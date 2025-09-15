@@ -4,7 +4,6 @@ import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} f
 /** @dynamic */
 @Component({
     selector: 'natural-gallery',
-    standalone: true,
     templateUrl: './natural-gallery.component.html',
 })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {

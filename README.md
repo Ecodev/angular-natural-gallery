@@ -20,7 +20,6 @@ In your standalone component, import `NaturalGalleryComponent`:
 @Component({
   selector: 'app-root',
   template: '<natural-gallery [options]="{rowHeight: 400}"></natural-gallery>',
-  standalone: true,
   imports: [NaturalGalleryComponent],
 })
 export class AppComponent {}
