@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, viewChild, output, input} from '@angular/core';
+import {Component, ElementRef, Input, input, OnInit, output, viewChild} from '@angular/core';
 import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 /** @dynamic */

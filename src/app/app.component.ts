@@ -1,6 +1,6 @@
 import {Component, viewChild} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
-import {ModelAttributes, NaturalGalleryOptions, LabelVisibility} from '@ecodev/natural-gallery-js';
+import {LabelVisibility, ModelAttributes, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 type Model = ModelAttributes & {thumbnailWidth: number; thumbnailHeight: number};
 type Image = {
