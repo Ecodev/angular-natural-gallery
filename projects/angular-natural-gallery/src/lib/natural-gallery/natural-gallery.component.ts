@@ -1,20 +1,21 @@
-import {Component, ElementRef, Input, OnInit, viewChild, output} from '@angular/core';
+import {Component, ElementRef, Input, input, OnInit, output, viewChild} from '@angular/core';
 import {CustomEventDetailMap, ModelAttributes, Natural, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 /** @dynamic */
 @Component({
     selector: 'natural-gallery',
     templateUrl: './natural-gallery.component.html',
-    standalone: true,
 })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
-    @Input({required: true}) public options!: NaturalGalleryOptions;
-    @Input() public scrollable: HTMLElement | undefined | null;
+    public readonly options = input.required<NaturalGalleryOptions>();
+    public readonly scrollable = input<HTMLElement | null>();
 
     public readonly activate = output<CustomEventDetailMap<T>['activate']>();
     // eslint-disable-next-line @angular-eslint/no-output-native
     public readonly select = output<CustomEventDetailMap<T>['select']>();
     public readonly pagination = output<CustomEventDetailMap<T>['pagination']>();
+    public readonly itemAddedToDom = output<CustomEventDetailMap<T>['item-added-to-dom']>();
+    public readonly itemDisplayed = output<CustomEventDetailMap<T>['item-displayed']>();
 
     private readonly galleryElement = viewChild.required<ElementRef<HTMLElement>>('gallery');
 
@@ -38,9 +39,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
     public ngOnInit(): void {
         setTimeout(() => {
-            const gallery = new Natural<T>(this.galleryElement().nativeElement, this.options, this.scrollable);
-
-            gallery.init();
+            const gallery = new Natural<T>(this.galleryElement().nativeElement, this.options(), this.scrollable());
 
             gallery.addEventListener('select', ev => {
                 this.select.emit(ev.detail);
@@ -52,6 +51,14 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
             gallery.addEventListener('pagination', ev => {
                 this.pagination.emit(ev.detail);
+            });
+
+            gallery.addEventListener('item-added-to-dom', ev => {
+                this.itemAddedToDom.emit(ev.detail);
+            });
+
+            gallery.addEventListener('item-displayed', ev => {
+                this.itemDisplayed.emit(ev.detail);
             });
 
             if (this._items.length) {

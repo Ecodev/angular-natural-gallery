@@ -50,7 +50,7 @@ jobs:
                   node-version: '22'
                   cache: 'yarn'
             - run: yarn --frozen-lockfile
-            - run: ./node_modules/.bin/prettier --check .
+            - run: ./node_modules/.bin/prettier --experimental-cli --check .
 
     release:
         runs-on: ubuntu-latest

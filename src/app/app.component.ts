@@ -1,6 +1,6 @@
 import {Component, viewChild} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
-import {ModelAttributes, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
+import {LabelVisibility, ModelAttributes, NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
 type Model = ModelAttributes & {thumbnailWidth: number; thumbnailHeight: number};
 type Image = {
@@ -66,8 +66,8 @@ type Image = {
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
     imports: [NaturalGalleryComponent],
+    templateUrl: './app.component.html',
 })
 export class AppComponent {
     private readonly gallery = viewChild.required<NaturalGalleryComponent>('gallery');
@@ -81,10 +81,10 @@ export class AppComponent {
         lightbox: true,
         selectable: true,
         activable: true,
-        showLabels: 'always',
+        labelVisibility: LabelVisibility.ALWAYS,
     };
 
-    private labelHoverActivated = this.options.showLabels === 'hover';
+    private labelHoverActivated = this.options.labelVisibility === LabelVisibility.HOVER;
 
     public constructor() {
         const images = this.getImages();
