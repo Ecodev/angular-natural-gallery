@@ -1,5 +1,3 @@
-@forward './natural-gallery.theme' show natural-gallery-theme;
-
 // This is the base CSS that must be included to have a functional PhotoSwipe
 @mixin natural-gallery-base() {
     @import '@ecodev/natural-gallery-js/natural-gallery.css';
