@@ -16,7 +16,6 @@
         "skipLibCheck": true,
         "isolatedModules": true,
         "typeRoots": ["node_modules/@types"],
-        "lib": ["ES2022", "dom"],
         "paths": {
             "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
             "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],

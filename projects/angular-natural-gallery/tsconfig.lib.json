@@ -7,8 +7,7 @@
         "sourceMap": true,
         "inlineSources": true,
         "importHelpers": true,
-        "types": [],
-        "lib": ["ES2022", "dom"]
+        "types": []
     },
     "angularCompilerOptions": {
         "skipTemplateCodegen": true,
