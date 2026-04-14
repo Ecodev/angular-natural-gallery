@@ -9,10 +9,10 @@
         "prettier": "./node_modules/.bin/prettier --experimental-cli --check .",
         "prettier-fix": "./node_modules/.bin/prettier --experimental-cli --write .",
         "e2e": "ng e2e",
-        "build-lib": "ng build angular-natural-gallery && cp -v README.md dist/angular-natural-gallery/ && cp -vr projects/angular-natural-gallery/src/lib/styles dist/angular-natural-gallery/ && cd dist/angular-natural-gallery && yarn version --no-git-tag-version --new-version `git describe --tags --always`",
-        "build-demo": "yarn build-lib && ng build demo --aot --base-href /angular-natural-gallery/ && cp dist/demo/browser/index.html dist/demo/browser/404.html",
+        "build-lib": "ng build angular-natural-gallery && cp -v README.md dist/angular-natural-gallery/ && cp -vr projects/angular-natural-gallery/src/lib/styles dist/angular-natural-gallery/ && cd dist/angular-natural-gallery && pnpm version `git describe --tags --always`",
+        "build-demo": "pnpm build-lib && ng build demo --aot --base-href /angular-natural-gallery/ && cp dist/demo/browser/index.html dist/demo/browser/404.html",
         "serve-demo": "echo '💡 open http://localhost:8000/angular-natural-gallery/' && mkdir -p dist/server && ln -fs ../demo/browser dist/server/angular-natural-gallery && php -S localhost:8000 -t dist/server/",
-        "llink": "cd dist/angular-natural-gallery && (yarn unlink ; yarn link)"
+        "llink": "cd dist/angular-natural-gallery && (pnpm unlink ; pnpm link)"
     },
     "repository": {
         "type": "git",
@@ -40,7 +40,9 @@
     "bugs": {
         "url": "https://github.com/Ecodev/angular-natural-gallery/issues"
     },
+    "packageManager": "pnpm@10.33.0",
     "devDependencies": {
+        "@angular-eslint/builder": "^21.3.1",
         "@angular/build": "^21.2.0",
         "@angular/cli": "^21.2.0",
         "@angular/common": "^21.2.0",
@@ -51,6 +53,7 @@
         "@angular/platform-browser": "^21.2.0",
         "@angular/router": "^21.2.0",
         "@ecodev/natural-gallery-js": "^11.1.1",
+        "@eslint/js": "^10.0.1",
         "@playwright/test": "^1.55.0",
         "@types/jasmine": "~5.1.9",
         "@types/node": "^22.14.1",
@@ -70,6 +73,5 @@
         "typescript": "~5.9.2",
         "typescript-eslint": "^8.29.1",
         "zone.js": "~0.15.1"
-    },
-    "dependencies": {}
+    }
 }

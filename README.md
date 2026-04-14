@@ -9,7 +9,7 @@ Thin wrapper for [@ecodev/natural-gallery-js](https://github.com/Ecodev/natural-
 To install this library, run:
 
 ```bash
-yarn add @ecodev/angular-natural-gallery
+pnpm add @ecodev/angular-natural-gallery
 ```
 
 ## Consuming the library
@@ -30,13 +30,13 @@ export class AppComponent {}
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
 
 ```bash
-$ yarn prod
+$ pnpm prod
 ```
 
 To lint all `*.ts` files:
 
 ```bash
-$ yarn lint
+$ pnpm lint
 ```
 
 ## License
