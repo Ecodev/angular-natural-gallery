@@ -9,7 +9,7 @@
         "prettier": "./node_modules/.bin/prettier --experimental-cli --check .",
         "prettier-fix": "./node_modules/.bin/prettier --experimental-cli --write .",
         "e2e": "ng e2e",
-        "build-lib": "ng build angular-natural-gallery && cp -v README.md dist/angular-natural-gallery/ && cp -vr projects/angular-natural-gallery/src/lib/styles dist/angular-natural-gallery/ && cd dist/angular-natural-gallery && pnpm version `git describe --tags --always`",
+        "build-lib": "ng build angular-natural-gallery && cp -v README.md dist/angular-natural-gallery/ && cp -vr projects/angular-natural-gallery/src/lib/styles dist/angular-natural-gallery/ && cd dist/angular-natural-gallery && pnpm version --no-git-checks --no-git-tag-version `git describe --tags --always`",
         "build-demo": "pnpm build-lib && ng build demo --aot --base-href /angular-natural-gallery/ && cp dist/demo/browser/index.html dist/demo/browser/404.html",
         "serve-demo": "echo '💡 open http://localhost:8000/angular-natural-gallery/' && mkdir -p dist/server && ln -fs ../demo/browser dist/server/angular-natural-gallery && php -S localhost:8000 -t dist/server/",
         "llink": "cd dist/angular-natural-gallery && (pnpm unlink ; pnpm link)"
@@ -40,7 +40,7 @@
     "bugs": {
         "url": "https://github.com/Ecodev/angular-natural-gallery/issues"
     },
-    "packageManager": "pnpm@10.33.0",
+    "packageManager": "pnpm@11.0.1",
     "devDependencies": {
         "@angular-eslint/builder": "^21.3.1",
         "@angular/build": "^21.2.0",
