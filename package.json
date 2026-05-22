@@ -40,7 +40,7 @@
     "bugs": {
         "url": "https://github.com/Ecodev/angular-natural-gallery/issues"
     },
-    "packageManager": "pnpm@11.2.2",
+    "packageManager": "pnpm@11.2.1",
     "devDependencies": {
         "@angular-eslint/builder": "^21.3.1",
         "@angular/build": "^21.2.0",
