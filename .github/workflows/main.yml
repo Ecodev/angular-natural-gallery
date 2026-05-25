@@ -1,5 +1,7 @@
 name: main
 on: [push, pull_request]
+permissions:
+    contents: read
 
 jobs:
     build:
@@ -7,6 +9,7 @@ jobs:
         steps:
             - uses: actions/checkout@v6
               with:
+                  persist-credentials: false
                   fetch-depth: 0 # Need all tags to get a version number in-between tags
             - uses: pnpm/action-setup@v6
             - uses: actions/setup-node@v6
@@ -24,6 +27,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v6
+              with:
+                  persist-credentials: false
             - uses: pnpm/action-setup@v6
             - uses: actions/setup-node@v6
               with:
@@ -36,6 +41,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v6
+              with:
+                  persist-credentials: false
             - uses: pnpm/action-setup@v6
             - uses: actions/setup-node@v6
               with:
@@ -48,6 +55,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v6
+              with:
+                  persist-credentials: false
             - uses: pnpm/action-setup@v6
             - uses: actions/setup-node@v6
               with:
@@ -67,6 +76,7 @@ jobs:
         steps:
             - uses: actions/checkout@v6
               with:
+                  persist-credentials: false
                   ref: ${{ github.ref }} # Otherwise our annotated tag is not fetched and we cannot get correct version
             - uses: actions/download-artifact@v8
               with:
@@ -83,10 +93,7 @@ jobs:
             - run: pnpm publish --provenance --no-git-checks dist/angular-natural-gallery/
 
             # Create release
-            - name: Get release info
-              run: git tag --format '%(contents:body)' --points-at > release-body.txt
-            - uses: ncipollo/release-action@v1
+            - name: Create release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-              with:
-                  bodyFile: release-body.txt
+              run: gh release create "$GITHUB_REF_NAME" --verify-tag --notes "$(git tag --format '%(contents:body)' --points-at)"
