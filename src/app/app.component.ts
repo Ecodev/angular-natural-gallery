@@ -1,4 +1,4 @@
-import {Component, viewChild} from '@angular/core';
+import {Component, viewChild, ChangeDetectionStrategy} from '@angular/core';
 import {NaturalGalleryComponent} from '@ecodev/angular-natural-gallery';
 import {LabelVisibility, type ModelAttributes, type NaturalGalleryOptions} from '@ecodev/natural-gallery-js';
 
@@ -68,6 +68,7 @@ type Image = {
     selector: 'app-root',
     imports: [NaturalGalleryComponent],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class AppComponent {
     private readonly gallery = viewChild.required<NaturalGalleryComponent>('gallery');

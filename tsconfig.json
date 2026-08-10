@@ -1,7 +1,6 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "baseUrl": "./",
         "outDir": "./dist/out-tsc",
         "esModuleInterop": true,
         "sourceMap": true,
@@ -17,8 +16,8 @@
         "isolatedModules": true,
         "typeRoots": ["node_modules/@types"],
         "paths": {
-            "@ecodev/angular-natural-gallery": ["projects/angular-natural-gallery/src/public_api"],
-            "@ecodev/angular-natural-gallery/*": ["dist/angular-natural-gallery/*"],
+            "@ecodev/angular-natural-gallery": ["./projects/angular-natural-gallery/src/public_api"],
+            "@ecodev/angular-natural-gallery/*": ["./dist/angular-natural-gallery/*"],
             "photoswipe/lightbox": ["./node_modules/photoswipe/dist/types/photoswipe.d.ts"]
         },
         "noImplicitOverride": true
@@ -27,8 +26,6 @@
         "strictStandalone": true,
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
-        "strictTemplates": true,
-        "fullTemplateTypeCheck": true,
         "extendedDiagnostics": {
             "defaultCategory": "error"
         }

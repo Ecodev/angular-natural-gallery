@@ -1,4 +1,13 @@
-import {Component, type ElementRef, Input, input, type OnInit, output, viewChild} from '@angular/core';
+import {
+    Component,
+    type ElementRef,
+    Input,
+    input,
+    type OnInit,
+    output,
+    viewChild,
+    ChangeDetectionStrategy,
+} from '@angular/core';
 import {
     type CustomEventDetailMap,
     type ModelAttributes,
@@ -10,6 +19,7 @@ import {
 @Component({
     selector: 'natural-gallery',
     templateUrl: './natural-gallery.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
     public readonly options = input.required<NaturalGalleryOptions>();
