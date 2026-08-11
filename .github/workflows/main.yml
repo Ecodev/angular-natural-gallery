@@ -35,7 +35,7 @@ jobs:
                   node-version: '24'
                   cache: 'pnpm'
             - run: pnpm install --frozen-lockfile
-            - run: ./node_modules/.bin/ng test angular-natural-gallery --progress false --watch=false --browsers ChromeHeadlessCustom
+            - run: ./node_modules/.bin/ng test angular-natural-gallery --watch=false
 
     lint:
         runs-on: ubuntu-latest

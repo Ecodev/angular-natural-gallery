@@ -100,11 +100,10 @@
                     "defaultConfiguration": "production"
                 },
                 "test": {
-                    "builder": "@angular/build:karma",
+                    "builder": "@angular/build:unit-test",
                     "options": {
-                        "polyfills": ["zone.js", "zone.js/testing"],
                         "tsConfig": "projects/angular-natural-gallery/tsconfig.spec.json",
-                        "karmaConfig": "projects/angular-natural-gallery/karma.conf.js"
+                        "runner": "vitest"
                     }
                 },
                 "lint": {
