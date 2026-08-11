@@ -10,3 +10,4 @@ minimumReleaseAge: 1440
 # List of packages to exclude from the minimum release age check.
 minimumReleaseAgeExclude:
     - '@ecodev/*'
+    - 'apollo-angular'
