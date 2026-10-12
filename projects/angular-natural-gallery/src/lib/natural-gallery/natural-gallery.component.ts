@@ -1,4 +1,4 @@
-import {Component, type ElementRef, Input, input, type OnInit, output, viewChild} from '@angular/core';
+import {Component, effect, type ElementRef, Input, input, model, type OnInit, output, viewChild} from '@angular/core';
 import {
     type CustomEventDetailMap,
     type ModelAttributes,
@@ -14,6 +14,7 @@ import {
 export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
     public readonly options = input.required<NaturalGalleryOptions>();
     public readonly scrollable = input<HTMLElement | null>();
+    public readonly selectionModeActive = model(false);
 
     public readonly activate = output<CustomEventDetailMap<T>['activate']>();
     // eslint-disable-next-line @angular-eslint/no-output-native
@@ -40,6 +41,19 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
         this.gallery = new Promise<Natural<T>>(resolve => {
             this.resolve = resolve;
         });
+
+        effect(() => {
+            const active = this.selectionModeActive();
+            if (!this.options().selectionMode) {
+                return;
+            }
+
+            this.gallery.then(gallery => {
+                if (gallery.selectionModeActive !== active) {
+                    gallery.setSelectionModeActive(active);
+                }
+            });
+        });
     }
 
     public ngOnInit(): void {
@@ -64,6 +78,10 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
             gallery.addEventListener('item-displayed', ev => {
                 this.itemDisplayed.emit(ev.detail);
+            });
+
+            gallery.addEventListener('selection-mode-change', ev => {
+                this.selectionModeActive.set(ev.detail);
             });
 
             if (this._items.length) {

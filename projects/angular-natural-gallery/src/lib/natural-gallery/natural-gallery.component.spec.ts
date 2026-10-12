@@ -15,4 +15,29 @@ describe('NaturalGalleryComponent', () => {
         const el = de.nativeElement;
         expect(el).not.toBeNull();
     });
+
+    it('should bind the selection mode both ways', async () => {
+        fixture.componentRef.setInput('options', {rowHeight: 200, selectionMode: true});
+        fixture.detectChanges();
+        const gallery = await fixture.componentInstance.gallery;
+
+        fixture.componentInstance.selectionModeActive.set(true);
+        TestBed.tick();
+        await fixture.componentInstance.gallery;
+        expect(gallery.selectionModeActive).toBe(true);
+
+        gallery.setSelectionModeActive(false);
+        expect(fixture.componentInstance.selectionModeActive()).toBe(false);
+    });
+
+    it('should ignore the selection mode without the selectionMode option', async () => {
+        fixture.componentRef.setInput('options', {rowHeight: 200});
+        fixture.detectChanges();
+        const gallery = await fixture.componentInstance.gallery;
+
+        fixture.componentInstance.selectionModeActive.set(true);
+        TestBed.tick();
+        await fixture.componentInstance.gallery;
+        expect(gallery.selectionModeActive).toBe(false);
+    });
 });
