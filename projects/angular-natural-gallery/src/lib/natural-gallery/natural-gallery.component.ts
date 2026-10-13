@@ -1,4 +1,15 @@
-import {Component, effect, type ElementRef, Input, input, model, type OnInit, output, viewChild} from '@angular/core';
+import {
+    Component,
+    effect,
+    type ElementRef,
+    Input,
+    input,
+    model,
+    type OnDestroy,
+    type OnInit,
+    output,
+    viewChild,
+} from '@angular/core';
 import {
     type CustomEventDetailMap,
     type ModelAttributes,
@@ -11,7 +22,7 @@ import {
     selector: 'natural-gallery',
     templateUrl: './natural-gallery.component.html',
 })
-export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit {
+export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes> implements OnInit, OnDestroy {
     public readonly options = input.required<NaturalGalleryOptions>();
     public readonly scrollable = input<HTMLElement | null>();
     public readonly selectionModeActive = model(false);
@@ -20,8 +31,8 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     // eslint-disable-next-line @angular-eslint/no-output-native
     public readonly select = output<CustomEventDetailMap<T>['select']>();
     public readonly pagination = output<CustomEventDetailMap<T>['pagination']>();
-    public readonly itemAddedToDom = output<CustomEventDetailMap<T>['item-added-to-dom']>();
-    public readonly itemDisplayed = output<CustomEventDetailMap<T>['item-displayed']>();
+    public readonly itemElementCreated = output<CustomEventDetailMap<T>['item-element-created']>();
+    public readonly visibleCollectionChange = output<CustomEventDetailMap<T>['visible-collection-change']>();
 
     private readonly galleryElement = viewChild.required<ElementRef<HTMLElement>>('gallery');
 
@@ -30,6 +41,8 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     private resolve!: (value: Natural<T>) => void;
 
     private _items: T[] = [];
+
+    private creationTimeout: ReturnType<typeof setTimeout> | undefined;
 
     @Input()
     public set items(items: T[]) {
@@ -57,7 +70,7 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
     }
 
     public ngOnInit(): void {
-        setTimeout(() => {
+        this.creationTimeout = setTimeout(() => {
             const gallery = new Natural<T>(this.galleryElement().nativeElement, this.options(), this.scrollable());
 
             gallery.addEventListener('select', ev => {
@@ -72,12 +85,12 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
                 this.pagination.emit(ev.detail);
             });
 
-            gallery.addEventListener('item-added-to-dom', ev => {
-                this.itemAddedToDom.emit(ev.detail);
+            gallery.addEventListener('item-element-created', ev => {
+                this.itemElementCreated.emit(ev.detail);
             });
 
-            gallery.addEventListener('item-displayed', ev => {
-                this.itemDisplayed.emit(ev.detail);
+            gallery.addEventListener('visible-collection-change', ev => {
+                this.visibleCollectionChange.emit(ev.detail);
             });
 
             gallery.addEventListener('selection-mode-change', ev => {
@@ -90,5 +103,10 @@ export class NaturalGalleryComponent<T extends ModelAttributes = ModelAttributes
 
             this.resolve(gallery);
         });
+    }
+
+    public ngOnDestroy(): void {
+        clearTimeout(this.creationTimeout);
+        this.gallery.then(gallery => gallery.destroy());
     }
 }

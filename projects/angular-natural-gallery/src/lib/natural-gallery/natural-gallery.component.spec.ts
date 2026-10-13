@@ -1,7 +1,7 @@
 import {type ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from '@angular/platform-browser';
 import {NaturalGalleryComponent} from './natural-gallery.component';
-import {beforeEach, describe, expect, it} from 'vitest';
+import {beforeEach, describe, expect, it, vi} from 'vitest';
 
 describe('NaturalGalleryComponent', () => {
     let fixture: ComponentFixture<NaturalGalleryComponent>;
@@ -39,5 +39,26 @@ describe('NaturalGalleryComponent', () => {
         TestBed.tick();
         await fixture.componentInstance.gallery;
         expect(gallery.selectionModeActive).toBe(false);
+    });
+
+    it('should destroy the gallery with the component', async () => {
+        fixture.componentRef.setInput('options', {rowHeight: 200});
+        fixture.detectChanges();
+        const gallery = await fixture.componentInstance.gallery;
+        const destroy = vi.spyOn(gallery, 'destroy');
+
+        fixture.destroy();
+        await fixture.componentInstance.gallery;
+        expect(destroy).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not create the gallery when the component is destroyed first', async () => {
+        fixture.componentRef.setInput('options', {rowHeight: 200});
+        fixture.detectChanges();
+        const element: HTMLElement = fixture.nativeElement.querySelector('.angular-natural-gallery-container');
+
+        fixture.destroy();
+        await new Promise(resolve => setTimeout(resolve));
+        expect(element.childElementCount).toBe(0);
     });
 });
