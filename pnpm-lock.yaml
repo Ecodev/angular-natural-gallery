@@ -140,8 +140,8 @@ importers:
         specifier: ^22.1.6
         version: 22.1.6(@angular/common@22.1.6(@angular/core@22.1.6(@angular/compiler@22.1.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.1.6(@angular/compiler@22.1.6)(rxjs@7.8.2))(@angular/platform-browser@22.1.6(@angular/common@22.1.6(@angular/core@22.1.6(@angular/compiler@22.1.6)(rxjs@7.8.2))(rxjs@7.8.2))(@angular/core@22.1.6(@angular/compiler@22.1.6)(rxjs@7.8.2)))(rxjs@7.8.2)
       '@ecodev/natural-gallery-js':
-        specifier: ^12.0.0
-        version: 12.0.0
+        specifier: ^12.1.0
+        version: 12.1.0
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.8.1)
@@ -516,8 +516,8 @@ packages:
     resolution: {integrity: sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==}
     engines: {node: '>=20.19.0'}
 
-  '@ecodev/natural-gallery-js@12.0.0':
-    resolution: {integrity: sha512-Y0JYsLCkpO4tNKnSfGFGRJ+aQt9LW++KdRcY4Elh0wCbLGOgRRCpdNXrNsyjwuDeF3zOxbmrUrS6Sqws30VBfw==}
+  '@ecodev/natural-gallery-js@12.1.0':
+    resolution: {integrity: sha512-B2A8GAY+PdaBUoREPVcv2/u2owRH+3pijr8Nt1W1ASGOs0WBdqFzP6bfQ7/1trOI4JdDGr7BTNUekykHLMVYsg==}
     engines: {node: '>=18.0.0'}
 
   '@emnapi/core@1.11.1':
@@ -3750,7 +3750,7 @@ snapshots:
 
   '@csstools/css-tokenizer@4.0.0': {}
 
-  '@ecodev/natural-gallery-js@12.0.0': {}
+  '@ecodev/natural-gallery-js@12.1.0': {}
 
   '@emnapi/core@1.11.1':
     dependencies:
